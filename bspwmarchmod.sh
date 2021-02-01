@@ -8,7 +8,7 @@ pacman -Syu -y --noconfirm
 
 pacman -S tilix -y --noconfirm
 
-pacman -S xdg-user-dirs
+pacman -S xdg-user-dirs -y --noconfirm
 
 xdg-user-dirs-update
 
@@ -32,9 +32,9 @@ pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings -y --noconfir
 
 systemctl enable lightdm.service
 
-pacman -S xorg -y --noconfirm
+#pacman -S xorg -y --noconfirm
 
-pacman -S xterm -y --noconfirm
+#pacman -S xterm -y --noconfirm
 
 pacman -S picom -y --noconfirm
 
@@ -61,62 +61,62 @@ pacman -S htop -y --noconfirm
 
 # PARA REMOVER Y AGREGAR DOTFILES MIOS A SUS CARPETAS CORRESPONDIENTES
 
-cp -r /home/newvash/bspwmarch/Infinity-Lavender-Dark-Icons/ /usr/share/icons
+cp -r /home/usuario/bspwmarch/Infinity-Lavender-Dark-Icons/ /usr/share/icons
 
-cp -r /home/newvash/bspwmarch/Lavender-Breeze-GTK/ /usr/share/themes
+cp -r /home/usuario/bspwmarch/Lavender-Breeze-GTK/ /usr/share/themes
 
 
-cp -r /home/newvash/bspwmarch/.wallpapers/ /home/newvash/
+cp -r /home/usuario/bspwmarch/.wallpapers/ /home/usuario/
 
-cp -r /home/newvash/bspwmarch/tilix/ /usr/share/
+cp -r /home/usuario/bspwmarch/tilix/ /usr/share/
 
-#cp -r /home/newvash/bspwmarch/terminal/ /usr/share/xfce4/
+#cp -r /home/usuario/bspwmarch/terminal/ /usr/share/xfce4/
 
-cp -r /home/newvash/bspwmarch/Thunar/ /home/newvash/.config/
+cp -r /home/usuario/bspwmarch/Thunar/ /home/usuario/.config/
 
-#cp -r /home/newvash/bspwmarch/xfce4/  /home/newvash/.config/
+#cp -r /home/usuario/bspwmarch/xfce4/  /home/usuario/.config/
 
 ######################################################################################################
 
 # PARA CREAR LAS CARPETAS BSPWM,COMPTON Y SXHKD EN .CONFIG
 
-mkdir -p /home/newvash/.config/bspwm/
+mkdir -p /home/usuario/.config/bspwm/
 
-mkdir -p /home/newvash/.config/sxhkd/
+mkdir -p /home/usuario/.config/sxhkd/
 
-mkdir -p /home/newvash/.config/picom/
+mkdir -p /home/usuario/.config/picom/
 
-cp -r /home/newvash/bspwmarch/rofi/  /home/newvash/.config/
+cp -r /home/usuario/bspwmarch/rofi/  /home/usuario/.config/
 
-cp /home/newvash/bspwmarch/bspwmrc /home/newvash/.config/bspwm
+cp /home/usuario/bspwmarch/bspwmrc /home/usuario/.config/bspwm
 
-chmod +x /home/newvash/.config/bspwm/bspwmrc
+chmod +x /home/usuario/.config/bspwm/bspwmrc
 
-cp /home/newvash/bspwmarch/sxhkdrc  /home/newvash/.config/sxhkd
+cp /home/usuario/bspwmarch/sxhkdrc  /home/usuario/.config/sxhkd
 
-chmod +x /home/newvash/.config/sxhkd/sxhkdrc
+chmod +x /home/usuario/.config/sxhkd/sxhkdrc
 
-cp /home/newvash/bspwmarch/picom.conf  /home/newvash/.config/picom
+cp /home/usuario/bspwmarch/picom.conf  /home/usuario/.config/picom
 
-chmod +x /home/newvash/.config/picom/picom.conf
+chmod +x /home/usuario/.config/picom/picom.conf
 
-#cp -r /home/newvash/bspwmarch/polybar/ /home/newvash/.config/
+#cp -r /home/usuario/bspwmarch/polybar/ /home/usuario/.config/
 
-cp -r /home/newvash/bspwmarch/idiomadmrc  /home/newvash/.config/
+cp -r /home/usuario/bspwmarch/idiomadmrc  /home/usuario/.config/
 
-cp -r /home/newvash/bspwmarch/Xresoursespararofi  /home/newvash/.config/
+cp -r /home/usuario/bspwmarch/Xresoursespararofi  /home/usuario/.config/
 
-cp -r /home/newvash/bspwmarch/fehbg  /home/newvash/.config/
+cp -r /home/usuario/bspwmarch/fehbg  /home/usuario/.config/
 
 ######################################################################################################
 
 # PARA AGREGAR FONTS
 
-cp -r /home/newvash/bspwmarch/fonts/adobe-source-code-pro/ /usr/share/fonts/
+cp -r /home/usuario/bspwmarch/fonts/adobe-source-code-pro/ /usr/share/fonts/
 
-cp -r /home/newvash/bspwmarch/fonts/TTF/ /usr/share/fonts/
+cp -r /home/usuario/bspwmarch/fonts/TTF/ /usr/share/fonts/
 
-cp -r /home/newvash/bspwmarch/fonts/cantarell/ /usr/share/fonts/
+cp -r /home/usuario/bspwmarch/fonts/cantarell/ /usr/share/fonts/
 
 ############################################################################################################################
 #PARAA INSTALAR QEMU
