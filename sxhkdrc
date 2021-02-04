@@ -1,5 +1,5 @@
 #
-# Zatiel Independent Hotkeys
+# Independent Hotkeys
 #
 
 # terminal emulator
@@ -9,9 +9,6 @@ alt + Return
 super + Return
 	 tilix
 
-alt + t
-	$HOME/.config/bspwm/bspwmfloat tilix -name Float
-
 # program launcher
 alt + d
 	rofi -show drun
@@ -19,40 +16,32 @@ alt + d
 alt + w
 	chromium
 
+alt + i
 
-#block screen
-
-#alt + b
-	i3lock-fancy-git
+       chromium -incognito
 
 alt + f
 	Thunar
+
+
+ctrl + alt + d
+
+       discord
 
 alt + m
 	telegram-desktop
 
 # Ranger
 
-ctrl+ shift + r
-	tilix  -name Ranger -e ranger
+ctrl + shift + r
 
-# alt + c
-# 	rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+	tilix -e ranger
 
-super + ctrl + p
+super + ctrl + p 
 	polybar-msg cmd toggle
-
-# betterlockscreen -u path/to/directory -r 1920x1080 -b 0.5
-# super + Delete
-# 	betterlockscreen -l blur
 
 super + Delete
 	i3lock-fancy
-
-# betterlockscreen -s blur
-super + alt + Delete
-	sh -c "$HOME/.config/bspwm/power"
-
 
 # para capturas de pantalla flameshot
 
@@ -68,12 +57,6 @@ super + alt + Print
 super + alt + m
 	notify-send "Now Playing ♫" "$(mpc current)"
 
-#alt + r
-      # $HOME/.config/bspwm/popup Ranger ranger
-
-# Balance desktop
-super + b
-	bspc node @focused:/ -B
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -88,7 +71,7 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }z
+super + {_,shift + }q
 	bspc node -{c,k}
 
 # alternar entre el diseño de mosaico y monóculo
