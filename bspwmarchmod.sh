@@ -22,7 +22,9 @@ pacman -S discord -y --noconfirm
 
 pacman -S rofi -y --noconfirm
 
-#yay -s polybar -y --noconfirm
+yay -S polybar-git -y --noconfirm
+
+pacman -S i3lock-fancy -y --noconfirm
 
 pacman -S bspwm -y --noconfirm
 
@@ -61,54 +63,63 @@ pacman -S htop -y --noconfirm
 
 # PARA REMOVER Y AGREGAR DOTFILES MIOS A SUS CARPETAS CORRESPONDIENTES
 
-cp -r /home/usuario/bspwmarch/Infinity-Lavender-Dark-Icons/ /usr/share/icons
+cp -r /home/newvash/bspwmarch/Infinity-Lavender-Dark-Icons/ /usr/share/icons
 
-cp -r /home/usuario/bspwmarch/Lavender-Breeze-GTK/ /usr/share/themes
+cp -r /home/newvash/bspwmarch/Lavender-Breeze-GTK/ /usr/share/themes
 
 
-cp -r /home/usuario/bspwmarch/.wallpapers/ /home/usuario/
+cp -r /home/newvash/bspwmarch/.wallpapers/ /home/newvash/
 
-cp -r /home/usuario/bspwmarch/tilix/ /usr/share/
+cp -r /home/newvash/bspwmarch/tilix/ /usr/share/
 
-#cp -r /home/usuario/bspwmarch/terminal/ /usr/share/xfce4/
+#cp -r /home/newvash/bspwmarch/terminal/ /usr/share/xfce4/
 
-cp -r /home/usuario/bspwmarch/Thunar/ /home/usuario/.config/
+cp -r /home/newvash/bspwmarch/Thunar/ /home/newvash/.config/
 
-#cp -r /home/usuario/bspwmarch/xfce4/  /home/usuario/.config/
+cp -r /home/newvash/bspwmarch/rofi/  /home/newvash/.config/
 
-######################################################################################################
+#cp -r /home/newvash/bspwmarch/xfce4/  /home/newvash/.config/
+#######################################################################
+#COPIA CARPETAS DE BSPWM,PICOM Y SXHKD EN .CONFIG EN VEZ DE CREARLAS
 
+cp -r /home/newvash/bspwmarch/bspwm/ /home/newvash/.config/
+chmod +x /home/newvash/.config/bspwm/bspwmrc
+cp -r /home/newvash/bspwmarch/sxhkd/ /home/newvash/.config/
+chmod +x /home/newvash/.config/sxhkd/sxhkdrc
+cp /home/newvash/bspwmarch/picom/  /home/newvash/.config/
+chmod +x /home/newvash/.config/picom/picom.conf
+cp /home/newvash/bspwmarch/polybar/  /home/newvash/.config/
+chmod +x /home/newvash/.config/polybar/config
+#######################################################################
 # PARA CREAR LAS CARPETAS BSPWM,COMPTON Y SXHKD EN .CONFIG
 
-mkdir -p /home/usuario/.config/bspwm/
+#mkdir -p /home/newvash/.config/bspwm/
 
-mkdir -p /home/usuario/.config/sxhkd/
+#mkdir -p /home/newvash/.config/sxhkd/
 
-mkdir -p /home/usuario/.config/picom/
+#mkdir -p /home/newvash/.config/picom/
 
-cp -r /home/usuario/bspwmarch/rofi/  /home/usuario/.config/
+#cp /home/newvash/bspwmarch/bspwmrc /home/newvash/.config/bspwm
 
-cp /home/usuario/bspwmarch/bspwmrc /home/usuario/.config/bspwm
+#chmod +x /home/newvash/.config/bspwm/bspwmrc
 
-chmod +x /home/usuario/.config/bspwm/bspwmrc
+#cp /home/newvash/bspwmarch/sxhkdrc  /home/newvash/.config/sxhkd
 
-cp /home/usuario/bspwmarch/sxhkdrc  /home/usuario/.config/sxhkd
+#chmod +x /home/newvash/.config/sxhkd/sxhkdrc
 
-chmod +x /home/usuario/.config/sxhkd/sxhkdrc
+#cp /home/newvash/bspwmarch/picom.conf  /home/newvash/.config/picom
 
-cp /home/usuario/bspwmarch/picom.conf  /home/usuario/.config/picom
+#chmod +x /home/newvash/.config/picom/picom.conf
 
-chmod +x /home/usuario/.config/picom/picom.conf
-
-#cp -r /home/usuario/bspwmarch/polybar/ /home/usuario/.config/
+#cp -r /home/newvash/bspwmarch/polybar/ /home/newvash/.config/
 ######################################################################################################
 
 # PARA AGREGAR FONTS
 
-cp -r /home/usuario/bspwmarch/fonts/ /usr/share/
+cp -r /home/newvash/bspwmarch/fonts/ /usr/share/
 
 ############################################################################################################################
-#PARAA INSTALAR QEMU
+#PARA INSTALAR QEMU
 
 #QEMU INSTALACION:
 
