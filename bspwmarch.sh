@@ -22,8 +22,6 @@ pacman -S discord -y --noconfirm
 
 pacman -S rofi -y --noconfirm
 
-yay -S polybar-git -y --noconfirm
-
 pacman -S i3lock-fancy -y --noconfirm
 
 pacman -S bspwm -y --noconfirm
@@ -48,13 +46,13 @@ pacman -S neofetch -y --noconfirm
 
 pacman -S epdfview -y --noconfirm
 
-pacman -S vlc  -y --noconfirm
+#pacman -S vlc  -y --noconfirm
 
 pacman -S feh  -y --noconfirm
 
 pacman -S xed -y --noconfirm
 
-pacman -S ranger -y --noconfirm
+#pacman -S ranger -y --noconfirm
 
 pacman -S htop -y --noconfirm
 
@@ -64,21 +62,16 @@ pacman -S htop -y --noconfirm
 # PARA REMOVER Y AGREGAR DOTFILES MIOS A SUS CARPETAS CORRESPONDIENTES
 
 cp -r /home/newvash/bspwmarch/Infinity-Lavender-Dark-Icons/ /usr/share/icons
-
 cp -r /home/newvash/bspwmarch/Lavender-Breeze-GTK/ /usr/share/themes
-
-
 cp -r /home/newvash/bspwmarch/.wallpapers/ /home/newvash/
-
 cp -r /home/newvash/bspwmarch/tilix/ /usr/share/
-
-#cp -r /home/newvash/bspwmarch/terminal/ /usr/share/xfce4/
-
 cp -r /home/newvash/bspwmarch/Thunar/ /home/newvash/.config/
-
 cp -r /home/newvash/bspwmarch/rofi/  /home/newvash/.config/
-
+cp  /home/newvash/bspwmarch/2.zshrc /home/newvash/
+cp  /home/newvash/bspwmarch/2.p10k.zsh  /home/newvash/
+#cp -r /home/newvash/bspwmarch/terminal/ /usr/share/xfce4/
 #cp -r /home/newvash/bspwmarch/xfce4/  /home/newvash/.config/
+
 #######################################################################
 #COPIA CARPETAS DE BSPWM,PICOM Y SXHKD EN .CONFIG EN VEZ DE CREARLAS
 
@@ -86,11 +79,13 @@ cp -r /home/newvash/bspwmarch/bspwm/ /home/newvash/.config/
 chmod +x /home/newvash/.config/bspwm/bspwmrc
 cp -r /home/newvash/bspwmarch/sxhkd/ /home/newvash/.config/
 chmod +x /home/newvash/.config/sxhkd/sxhkdrc
-cp /home/newvash/bspwmarch/picom/  /home/newvash/.config/
+cp -r /home/newvash/bspwmarch/picom/  /home/newvash/.config/
 chmod +x /home/newvash/.config/picom/picom.conf
-cp /home/newvash/bspwmarch/polybar/  /home/newvash/.config/
+cp -r /home/newvash/bspwmarch/polybar/  /home/newvash/.config/
 chmod +x /home/newvash/.config/polybar/config
+
 #######################################################################
+
 # PARA CREAR LAS CARPETAS BSPWM,COMPTON Y SXHKD EN .CONFIG
 
 #mkdir -p /home/newvash/.config/bspwm/
@@ -182,9 +177,9 @@ sudo virsh net-define /etc/libvirt/qemu/networks/default.xml
 
 #Que inicie automatico
 
-sudo virsh net-autostart default 
+#sudo virsh net-autostart default 
 
 #Activar NAT
 
-sudo virsh net-start default
+#sudo virsh net-start default
 

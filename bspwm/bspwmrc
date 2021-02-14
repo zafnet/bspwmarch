@@ -1,48 +1,56 @@
 #! /bin/sh
 
 sxhkd &
-
 setxkbmap -v es
-
 picom &
-
-~/.config/polybar/launch.sh &
-
-#xrandr -s 1920x1440 &
-
-polybar example &
-
+#xrandr -s 1600x900 &
+exec /home/newvash/.config/polybar/launch.sh  &
 feh --bg-fill --randomize /home/newvash/.wallpapers/ *
-
 #feh --bg-fill -z /home/newvash/.wallpapers/*
-
 bspc config pointer_modifier mod1
+
+#### SI TENGO MAS MONITORES REALES####
+#bspc monitor DisplayPort-0 -d 1 2 3 4 5 6 7 8 9
+#bspc monitor DisplayPort-1 -d 1 2 3 4 5 6 7 8 9
+#bspc monitor HDMI-A-0 -d 1 2 3 4 5 6 7 8 9
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config border_width         3
-bspc config window_gap          5
-bspc config normal_border_color "color6"
-bspc config active_border_color "color8"
-bspc config focused_border_color "#fb4b4b"
-bspc config presel_feedback_color "#94f2f7"
+#### BSPWM configuration ####
 
-SPACES=$(bspc query -D)
-for SPACE in $SPACES
-do
-  bspc config -d ${SPACE} window_gap      2
-  bspc config -d ${SPACE} top_padding     5
-  bspc config -d ${SPACE} bottom_padding  5
-  bspc config -d ${SPACE} left_padding   5
-  bspc config -d ${SPACE} right_padding  5
-done
+#bspc config border_radius                8
+bspc config border_width                  2
+bspc config window_gap                    10
+bspc config top_padding                   20
+bspc config bottom_padding                0
+bspc config left_padding                  0
+bspc config right_padding                 0
+bspc config single_monocle                false
+bspc config click_to_focus                true
+bspc config split_ratio                   0.50
+bspc config borderless_monocle            true
+bspc config gapless_monocle               true
+bspc config focus_by_distance             true
+bspc config focus_follows_pointer         true
+bspc config history_aware_focus           true
+bspc config remove_disabled_monitors      true
+bspc config merge_overlapping_monitors    true
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
 
-bspc config automatic_scheme      spiral
-bspc config split_ratio           0.5
-bspc config borderless_monocle    true
-bspc config gapless_monocle       false
-bspc config single_monocle        true
-bspc config focus_follows_pointer true
+#### BSPWM coloring ####
+bspc config normal_border_color		      "#4c566a"
+bspc config active_border_color	          "#1e1e1e"
+bspc config focused_border_color	      "#5e81ac"
+bspc config presel_feedback_color	      "#5e81ac"
+bspc config urgent_border_color 	      "#dd2727"
+
+#polybar hidden when fullscreen for vlc, youtube, mpv ...
+#find out the name of your monitor with xrandr
+
+#xdo below -t $(xdo id -n root) $(xdo id -a polybar-main_Virtual-1)
+
 
 bspc desktop ^1 -l monocle
 bspc desktop ^2 -l monocle
@@ -52,59 +60,32 @@ bspc desktop ^9 -l monocle
 bspc desktop ^10 -l monocle
 
 # Rules
-bspc rule -a tilix:Tiled desktop='^1' follow=on
-bspc rule -a tilix:Tmux desktop='^1' follow=on
+bspc rule -a tilix:Tiled desktop='^' follow=on
+bspc rule -a tilix:Tmux desktop='^' follow=on
 bspc rule -a Chromium desktop='^'
-#bspc rule -a Subl3 desktop='^3'
 bspc rule -a Thunar desktop='^' state=pseudo_tiled
-bspc rule -a Thunar desktop='^'
-bspc rule -a Thunar:Dialog state=floating center=true
 bspc rule -a TelegramDesktop desktop='^2' follow=on
 bspc rule -a discord desktop='^2' follow=on
-bspc rule -a Gimp-2.10 desktop='^6'
-bspc rule -a Inkscape desktop='^6'
-bspc rule -a kdenlive desktop='^6'
-bspc rule -a Audacious desktop='^7' state=floating follow=on focus=on
-bspc rule -a Zathura desktop='^7' state=tiled follow=on
-bspc rule -a '*:libreoffice' desktop='^8' state=tiled
-bspc rule -a '*:soffice' desktop='^8'
-bspc rule -a Gnome-chess desktop='^9'
-bspc rule -a teeworlds desktop='^9'
 bspc rule -a Steam desktop='^2' state=floating
-bspc rule -a "VirtualBox Manager" desktop='^10'
-
-bspc rule -a tilix:Newsboat state=floating center=on
+#bspc rule -a "VirtualBox Manager" desktop='^10'
+#bspc rule -a tilix:Newsboat state=floating center=on
 bspc rule -a tilix:Ranger state=floating center=on
-bspc rule -a tilix:Pacui state=floating center=on
+#bspc rule -a tilix:Pacui state=floating center=on
 bspc rule -a tilix:Float state=floating
+
 bspc rule -a Gnome-calculator state=floating
-bspc rule -a Gpick state=floating
+#bspc rule -a Gpick state=floating
 bspc rule -a GParted state=floating
-bspc rule -a File-roller state=floating
-bspc rule -a Nitrogen state=floating
 bspc rule -a Lxappearance state=floating center=true
-bspc rule -a Lxrandr state=floating
 bspc rule -a Pavucontrol state=floating
-bspc rule -a Timeshift-gtk state=floating
 bspc rule -a qt5ct state=floating rectangle=700x470+0+0 center=on
-bspc rule -a SimpleScreenRecorder state=floating
-bspc rule -a Sxiv state=floating
-bspc rule -a Viewnior state=floating
-bspc rule -a SMPlayer state=floating
-bspc rule -a mpv state=floating sticky=on rectangle=300x180+1060+475
+#bspc rule -a mpv state=floating sticky=on rectangle=300x180+1060+475
 
 bscp rule -a polybar manage=off
 bspc rule -a Tint2 border=off manage=off layer=above state=floating
 # bspc rule -a Mylaunchpad border=off manage=off
-bspc rule -a '*:Kunst' sticky=on layer=below border=off focus=off
-# bspc rule -a Sxiv:Kunst sticky=on layer=below border=off focus=off manage=off rectangle=250x250+1055+60
+#bspc rule -a '*:Kunst' sticky=on layer=below border=off focus=off
+# bspc rule -a Sxiv:Kunst sticky=on layer=below border=off focus=off manage=off #rectangle=250x250+1055+60
 
-# Set Desktop 7 to start with floating windows
-FLOATING_DESKTOP_ID=$(bspc query -D -d '^7')
-bspc subscribe node_manage | while read -a msg ; do
-	desk_id=${msg[2]}
-	wid=${msg[3]}
-	[ "$FLOATING_DESKTOP_ID" = "$desk_id" ] && bspc node "$wid" -t floating
-done
 
 
