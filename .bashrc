@@ -96,7 +96,7 @@ export LS_COLORS
 ######################## PACMAN Y YAY #############################
 
 alias inst='sudo pacman -S'   
-alias  upda='sudo pacman -Syu' 
+alias  actu='sudo pacman -Syu' 
 #alias yaysua="yay -Sua --noconfirm"
 #alias yaysyu="yay -Syu --noconfirm"  
 
