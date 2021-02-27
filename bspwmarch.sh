@@ -6,9 +6,17 @@
 
 pacman -Syu -y --noconfirm
 
+pacman -S nmap -y --noconfirm
+
 pacman -S tilix -y --noconfirm
 
+pacman -S tmux -y --noconfirm
+
 pacman -S xdg-user-dirs -y --noconfirm
+
+pacman -S zsh -y --noconfirm
+
+pacman -S lsd -y --noconfirm
 
 xdg-user-dirs-update
 
@@ -38,6 +46,8 @@ pacman -S xterm -y --noconfirm
 
 pacman -S picom -y --noconfirm
 
+pacman -S pcmanfm -y --noconfirm
+
 pacman -S thunar -y --noconfirm
 
 pacman -S lxappearance  -y --noconfirm
@@ -45,6 +55,10 @@ pacman -S lxappearance  -y --noconfirm
 pacman -S neofetch -y --noconfirm
 
 pacman -S epdfview -y --noconfirm
+
+pacman -S zsh-autosuggestions -y --noconfirm
+
+pacman -S zsh-syntax-highlighting -y --noconfirm
 
 #pacman -S vlc  -y --noconfirm
 
@@ -56,19 +70,24 @@ pacman -S xed -y --noconfirm
 
 pacman -S htop -y --noconfirm
 
+cp -r /usr/share/zsh/plugins/zsh-syntax-highlighting/ /usr/share/
+
+cp -r /usr/share/zsh/plugins/zsh-autosuggestions/ /usr/share/
 ###################################################################################
-
-
 # PARA REMOVER Y AGREGAR DOTFILES MIOS A SUS CARPETAS CORRESPONDIENTES
-
-cp -r /home/newvash/bspwmarch/Infinity-Lavender-Dark-Icons/ /usr/share/icons
-cp -r /home/newvash/bspwmarch/Lavender-Breeze-GTK/ /usr/share/themes
+cp    /home/newvash/bspwmarch/.tmux/.tmux.conf  /home/newvash/
+cp    /home/newvash/bspwmarch/.tmux/.tmux.conf.local  /home/newvash/
+cp -r /home/newvash/bspwmarch/.oh-my-zsh/ /home/newvash/
+cp -r /home/newvash/bspwmarch/Infinity-Lavender-Dark-Icons/ /usr/share/icons/
+cp -r /home/newvash/bspwmarch/Lavender-Breeze-GTK/ /usr/share/themes/
 cp -r /home/newvash/bspwmarch/.wallpapers/ /home/newvash/
 cp -r /home/newvash/bspwmarch/tilix/ /usr/share/
 cp -r /home/newvash/bspwmarch/Thunar/ /home/newvash/.config/
 cp -r /home/newvash/bspwmarch/rofi/  /home/newvash/.config/
-cp  /home/newvash/bspwmarch/2.zshrc /home/newvash/
-cp  /home/newvash/bspwmarch/2.p10k.zsh  /home/newvash/
+cp  /home/newvash/bspwmarch/.zshrc /home/newvash/
+cp  /home/newvash/bspwmarch/.p10k.zsh  /home/newvash/
+cp  /home/newvash/bspwmarch/.bashrc  /home/newvash/
+#cp -r /home/newvash/bspwmarch/i3/  /home/newvash/.config/
 #cp -r /home/newvash/bspwmarch/terminal/ /usr/share/xfce4/
 #cp -r /home/newvash/bspwmarch/xfce4/  /home/newvash/.config/
 

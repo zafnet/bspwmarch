@@ -1,0 +1,373 @@
+## Archivo de inicialización de muestra para GNU nano.
+##
+## Para las opciones que toman parámetros, se muestra el valor predeterminado.
+## Otras opciones no están configuradas por defecto. Para asegurarse de que una opción
+## está deshabilitado, puede usar "unset <option>".
+##
+## Los caracteres que son especiales en un shell no deben escaparse aquí.
+## Dentro de los parámetros de cadena, las comillas no deben escaparse -- el último
+## La comilla doble en la línea se verá como la cita de cierre.
+
+## hacer 'nextword' (Ctrl+Right) y 'chopwordright' (Ctrl+Delete)
+## detenerse al final de la palabra en lugar de al comienzo.
+
+# set afterends
+
+## Cuando el ajuste de línea suave está habilitado, haz que envuelva las líneas en los espacios en blanco
+## (pestañas y espacios) en lugar de estar siempre en el borde de la pantalla.
+
+# set atblanks
+
+## Sangra automáticamente una línea recién creada con el mismo número de
+## tabulaciones y / o espacios como la línea anterior o como la línea siguiente
+## si la línea anterior es el comienzo de un párrafo.
+
+# set autoindent
+
+
+###hace busquedas hacia atras por defecto
+
+set backwards
+
+## Realiza una copia de seguridad de los archivos con el nombre de archivo actual más una tilde.
+
+# set backup
+
+## El directorio para colocar archivos de respaldo únicos.
+
+# set backupdir ""
+
+## Usa texto en negrita en lugar de texto de video inverso.
+
+# set boldtext
+
+## Trate cualquier línea con espacios en blanco iniciales como el comienzo de un párrafo.
+
+# set bookstyle
+
+## Los caracteres tratados como corchetes de cierre al justificar párrafos.
+## Esto no puede incluir caracteres en blanco. Solo puntuación de cierre,
+## seguido opcionalmente por estos corchetes de cierre, puede terminar (end) oraciones.
+# establecer corchetes ""')>]}"
+
+
+## Ajusta automáticamente la línea actual cuando se vuelve demasiado larga.
+
+# set breaklonglines
+
+## Realizar búsquedas que distinguen entre mayúsculas y minúsculas de forma predeterminada.(Do case-sensitive searches by default.)
+
+# set casesensitive
+
+## Muestra constantemente la posición del cursor en la barra de estado. Tenga en cuenta que
+## esto anula "quickblank".
+
+ set constantshow
+
+## Utiliza cortar desde el cursor hasta el final de la línea de forma predeterminada.
+
+# set cutfromcursor
+
+## No uses la línea debajo de la barra de título, dejándola completamente en blanco.
+
+# set emptyline
+
+## Establece el ancho objetivo para el ajuste rígido automático y para justificar
+## párrafos. Si el valor especificado es 0 o menos, el punto de ajuste
+## será el ancho de la terminal menos este número.
+
+# set fill -8
+
+## Recuerde las cadenas de búsqueda / reemplazo utilizadas para la próxima sesión.
+
+# set historylog
+
+## Muestra una "barra de desplazamiento" en el lado derecho de la ventana de edición.
+
+# set indicator
+
+## Desplaza el contenido del búfer por media pantalla en lugar de por línea.
+
+# set jumpyscrolling
+
+## Muestra los números de línea a la izquierda (y cualquier ancla en el margen).
+
+set linenumbers
+
+## Habilita archivos de bloqueo de estilo vim. Esto es solo para que un usuario de vim lo conozca
+## están editando un archivo [s] que está tratando de editar y viceversa. Existen
+## no hay planes para implementar el estado de deshacer al estilo vim en estos archivos.
+
+# set locking
+
+## Recurre a la lenta libmagic para intentar determinar una sintaxis aplicable.
+
+# set magic
+
+# Después de una búsqueda, coloque la marca al end de la coincidencia encontrada (si corresponde).
+
+# set markmatch
+
+## Los corchetes de apertura y cierre que se pueden encontrar por corchete
+## búsquedas. No pueden contener caracteres en blanco. El primer conjunto debe
+## vienen antes del último conjunto, y ambos deben estar en el mismo orden.
+
+# set matchbrackets "(<[{)>]}"
+
+## Suprime la barra de título y muestra el nombre del archivo y el estado del editor en la parte inferior.
+
+# set minibar
+
+## Habilite la compatibilidad con el mouse, si está disponible para su sistema. Cuando está habilitado,
+## Se pueden usar clics del mouse para colocar el cursor, establecer la marca (con un
+## doble clic) y ejecute atajos. El mouse funcionará en la X
+## Window System y en la consola cuando gpm se está ejecutando.
+
+ set mouse
+
+## Active varios búferes de archivos (al insertar un archivo, se colocará en
+## un búfer separado).
+
+# set multibuffer
+
+## No convierta archivos de formato DOS / Mac.
+
+# set noconvert
+
+## No muestres las útiles listas de atajos en la parte inferior de la pantalla.
+
+# set nohelp
+
+## No agregue automáticamente una nueva línea cuando un archivo no termina con una.
+
+# set nonewlines
+
+## Establecer directorio operativo. nano no leerá ni escribirá archivos fuera
+## este directorio y sus subdirectorios. Además, el directorio actual
+## se cambia aquí, por lo que los archivos se insertan desde este directorio. Un espacio
+## string significa que la función de directorio operativo está desactivada.
+
+# set operatingdir ""
+
+## Recuerde la posición del cursor en cada archivo para la próxima sesión de edición.
+
+# set positionlog
+
+## Conserva las teclas XON y XOFF (^Q y ^S).
+
+# set preserve
+
+## Los caracteres tratados como puntuación de cierre al justificar
+## párrafos. No pueden contener caracteres en blanco. Solo cerrando
+## puntuación, opcionalmente seguida de corchetes de cierre, puede terminar
+## oraciones.
+
+# set punct "!.?"
+
+## Hacer un borrado rápido de la barra de estado. Los mensajes de la barra de estado desaparecerán después
+## 1 pulsación de tecla en lugar de 26. Tenga en cuenta que "constantshow" anula esto.
+
+# set quickblank
+
+## La expresión regular que coincide con los caracteres entre comillas en el correo electrónico
+## o introductores de comentarios de línea en el código fuente. El valor predeterminado es:
+
+# set quotestr "^([ 	]*([!#%:;>|}]|//))+"
+
+## Intente solucionar una descripción de terminal terminfo que no coincida.
+
+# set rawsequences
+
+## Solucionar el problema de confusión de retroceso / eliminación.
+
+# set rebinddelete
+
+## Realiza búsquedas con expresiones regulares de forma predeterminada.
+## Las expresiones regulares son del tipo extendido (ERE).
+
+# set regexp
+
+## Guardar un búfer modificado automáticamente al salir; no preguntes.
+
+# set saveonexit
+## (La forma antigua de esta opción, 'establecer tempfile', está obsoleta).
+
+
+## Coloque el cursor en el elemento resaltado en el explorador de archivos y muestre
+## el cursor en el visor de ayuda; útil para personas que usan braille
+## pantalla y personas con problemas de visión.
+
+# set showcursor
+
+## Haz que la tecla de inicio sea más inteligente. Cuando se presiona Inicio en cualquier lugar menos en el
+## al principio de los caracteres que no son espacios en blanco en una línea, el cursor
+## saltará a ese comienzo (ya sea hacia adelante o hacia atrás). Si el
+## cursor ya está en esa posición, saltará a la verdadera
+## comienzo de la línea.
+
+# set smarthome
+
+## Extienda líneas muy largas en varias líneas de pantalla.
+
+# set softwrap
+
+## Utilice este corrector ortográfico en lugar del interno. Esta opción
+## no tiene un valor predeterminado.
+
+# set speller "aspell -x -c"
+
+(## Use el final de la barra de título para algunas banderas de estado: I = sangría automática,
+## M = marca, L = líneas largas de envoltura dura, R = grabación, S = envoltura blanda.
+
+## Use the end of the title bar for some state flags: I = auto-indenting,
+## M = mark, L = hard-wrapping long lines, R = recording, S = soft-wrapping.)
+
+# set stateflags
+
+## Permitir que nano se suspenda (with ^Z por defecto).
+
+# set suspendable
+
+## (La forma antigua de esta opción, 'set suspend', es obsoleto.)
+
+## Utilice este tamaño de pestaña en lugar del predeterminado; debe ser mayor que 0.
+
+# set tabsize 8
+
+## Convierte las tabulaciones escritas en espacios.
+
+# set tabstospaces
+
+## Recorta los espacios en blanco al final de las líneas al justificar o ajustar.
+
+# set trimblanks
+
+#Desplazamiento por línea en lugar de por pantalla completa
+
+#set smooth
+
+## caracteres de una sola columna utilizados para mostrar los primeros caracteres
+## de pestañas y espacios. 187 en ISO 8859-1 (0000BB en Unicode) y 183 en
+## ISO-8859-1 (0000B7 en Unicode) parecen ser buenos valores para estos.
+## El valor predeterminado cuando en UTF-8 locale:
+
+# set whitespace "»·"
+
+## El valor predeterminado de lo contrario:
+
+# set whitespace ">."
+
+## Detecta los límites de las palabras de manera diferente al tratar la puntuación
+## caracteres como partes de palabras.
+
+# set wordbounds
+
+## Los caracteres (además de los alfanuméricos) que se deben considerar
+## como partes de palabras. Esta opción no tiene un valor predeterminado. Cuando
+## establecido, anula la opción 'set wordbounds'.
+
+# set wordchars "<_>."
+
+## Deja que un Retroceso o Eliminar sin modificar borre la región marcada (en su lugar
+## de un solo carácter, y sin afectar el búfer de corte).
+
+# set zap
+
+## Pinta los elementos de la interfaz de nano. Estos son ejemplos;
+## por defecto no hay colores, excepto el color de error.
+
+set titlecolor yellow,magenta
+ set promptcolor yellow
+ set statuscolor green
+set errorcolor red
+# set selectedcolor lightwhite,magenta
+# set stripecolor ,yellow
+# set scrollercolor cyan
+ set numbercolor green
+ set keycolor magenta
+ set functioncolor lightmagenta
+
+## En el .nanorc de root es posible que desee utilizar: 
+
+# set titlecolor bold,lightwhite,magenta
+# set promptcolor black,yellow
+# set statuscolor bold,lightwhite,magenta
+# set errorcolor bold,lightwhite,red
+# set selectedcolor lightwhite,cyan
+# set stripecolor ,yellow
+# set scrollercolor magenta
+# set numbercolor magenta
+# set keycolor lightmagenta
+# set functioncolor magenta
+
+
+## === Coloración de sintaxis ===
+## Para todos los detalles, consulte 'man nanorc', sección SYNTAX HIGHLIGHTING.
+
+## Para incluir la mayoría de las definiciones de sintaxis existentes, puedes hacer lo siguiente:
+
+# include "/usr/share/nano/*.nanorc"
+
+## O puede seleccionar solo los que necesita. Por ejemplo:
+
+# include "/usr/share/nano/html.nanorc"
+# include "/usr/share/nano/python.nanorc"
+ include "/usr/share/nano/sh.nanorc"
+
+## En /usr/share/nano/extra/ puedes encontrar algunas sintaxis que son
+## específico para ciertas distribuciones o para algunos lenguajes menos comunes.
+
+
+## Si <Tab> siempre debe producir cuatro espacios al editar un archivo Python,
+## independientemente de la configuración de 'tabsize' and 'tabstospaces':
+# extender la pestaña syntax python da ""
+
+## Si <Tab> siempre debe producir una TAB real al editar un Makefile:
+# extensiones de archivo makefile de la sintaxis tabgives ""
+
+## === Atajos de teclado ===
+## Para todos los detalles, consulte 'man nanorc', sección REBINDING KEYS.
+
+## El <Ctrl+Delete> pulsación de tecla borra la palabra a la derecha del cursor.
+## En algunos terminales el <Ctrl+Backspace> pulsación de tecla produce ^H,cual es
+## el carácter ASCII para retroceso, por lo que está vinculado por defecto al
+## función de retroceso. El <Retroceso> La clave en sí produce una
+## código de tecla, que está vinculado a la función de retroceso. Así que si usted
+## normalmente usa <Backspace> para retroceder y no ^H, puedes hacer
+## <Ctrl+Backspace> borre la palabra a la izquierda del cursor con:
+# bind ^H chopwordleft main
+
+## Si desea que nano tenga combinaciones de teclas que sean más "habituales",
+## tal como ^O Para abierto , ^F para encontrar, ^H por ayuda, y ^Q para salir,
+## luego descomente estos:
+#bind ^Q exit all
+#bind ^S savefile main
+#bind ^W writeout main
+#bind ^O insert main
+#bind ^H help all
+#bind ^H exit help
+#bind ^F whereis all
+#bind ^G findnext all
+#bind ^B wherewas all
+#bind ^D findprevious all
+#bind ^R replace main
+#bind M-X flipnewbuffer all
+#bind ^X cut all
+#bind ^C copy main
+#bind ^V paste all
+#bind ^P location main
+#bind ^A mark main
+#unbind ^K main
+#unbind ^U all
+#unbind ^N main
+#unbind ^Y all
+#unbind M-J main
+#unbind M-T main
+#bind ^T gotoline main
+#bind ^T gotodir browser
+#bind ^Y speller main
+#bind M-U undo main
+#bind M-R redo main
+#bind ^U undo main
+#bind ^E redo main
+#set multibuffer

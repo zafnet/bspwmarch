@@ -17,27 +17,40 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #aa2F343F
-background-alt = #aa2F343F
-;foreground = ${xrdb:color7:#444}
-foreground = #82E5CD
-foreground-alt = #F35A09
-primary = #FFEA07
-secondary = #
-alert = #bd2c40
+#estos dos son para el color de fondo del lado izquierdo cuando estan vacios los workspaces
+#background = #CDFBDD
+#background = #CDFBDD
+#########################################
+#este de abajo es el color de fondo cuando esta enfocado en una ventana
+#background-alt = #B789B7 
+########################################################################
+#estos dos de abajo son para el color de adelante pero me cambio el color de las arrow 1 vez no se si servira para otra cosa 
+#foreground = #fb1717
+#foreground = #fb1717
+###############################
+#este no se que cambia
+#foreground-alt = #fdff04
 
+#primary = #000000
+#secondary = #000000
+#alert = #000000
+####################################################### barra ejemplo#################
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 20
-;offset-x = 0%
+height = 17
+offset-x = 0%
 offset-y = 0%
-radius = 1.0
-fixed-center = true 
+radius = 0
+fixed-center = false
+#este de abajo pinta toda la barra completa en el background
+#background = #00000000
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+#este es el supuesto tranparente #aa2F343F
+
+#este de abajo cambia las arrows de color si saco el de arriba backgroun y se pone transparente toda la barra
+#foreground = #050100
+##################################################
 
 line-size = 50
 line-color = #aa
@@ -49,21 +62,26 @@ padding-left = 0
 padding-right = 0
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
+############ las FONTS CARGADAS ###############################
+font-0 = "UbuntuMono Nerd Font:size=10;2"
+font-1 = "UbuntuMono Nerd Font:size=16;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
+font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
+font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
+#font-0 = "fixed:pixelsize=10;1"
+#font-1 = "unifont:fontformat=truetype:size=8:antialias=false;0"
+font-5 = "Hack Nerd Font Mono:pixelsize=8;1"
+font-6 =  "PowerlineSymbols:pixelsize=8;1"
+#font-4 = "siji:pixelsize=10;1"
+###################################################################
 
-############fonts cargadas###############################
-font-0 = "fixed:pixelsize=10;1"
-font-1 = "unifont:fontformat=truetype:size=8:antialias=false;0"
-font-2 = "Hack Nerd Font Mono:pixelsize=8;1"
-font-3 =  "PowerlineSymbols:pixelsize=8;1"
-font-4 = "siji:pixelsize=10;1"
-font-5 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
+########################################modulo izquierda derecha###################
 
-
-modules-left = bspwm
-modules-center = 
-modules-right = eth memory pulseaudio date 
+modules-left =bspwm i3 
+modules-center = pacman-updates
+modules-right = arrow3 eth memory arrow2 pulseaudio arrow3 date arrow2
 
 tray-position = right
 tray-padding = 2
@@ -85,108 +103,49 @@ cursor-scroll = ns-resize
 
 enable-ipc = true
 
-###################### MODULES ARROWS que no me funcionaron como espere ############
-[module/arrow1]
-; grey to Blue
-type = custom/text
-#content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #8d62a9
-content-background = #292d3e
+######################################modulo teclado##############
 
-[module/arrow2]
-; grey to Blue
-type = custom/text
-#content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #668bd7
-content-background = #8d62a9
+[module/xkeyboard]
+;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
+type = internal/xkeyboard
+blacklist-0 = num lock
 
-[module/arrow3]
-; grey to Blue
-type = custom/text
-#content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #8b62a9
-content-background = #668bd7
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-prefix-background = ${colors.background}
+#format-prefix-underline = #3ecfb2
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
 
-#[module/xwindow]
-#type = internal/xwindow
-#label = " %title:0:30:...%"
-#label-foreground = ${colors.color3}
-#format-foreground = ${colors.color3}
+label-layout = %layout%
+#label-layout-underline = #3ecfb2
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.background}
+label-indicator-underline = ${colors.foreground}
 
-#;[module/xkeyboard]
-#;type = internal/xkeyboardtemperature
-#;blacklist-0 = num lock
-#;format-prefix = " "
-#;format-prefix-foreground = ${colors.foreground-alt}
-#;format-prefix-underline = ${colors.secondary}
-#;label-layout = %layout%
-#;label-layout-underline = ${colors.secondary}
-#;label-indicator-padding = 2
-#;label-indicator-margin = 1
-#;label-indicator-background = ${colors.secondary}
-#;label-indicator-underline = ${colors.secondary}
+######################################################################################
 
-#;[module/filesystem]
-#;type = internal/fs
-#;interval = 25
-#;mount-0 = /
-#;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-#;label-unmounted = %mountpoint% not mounted
-#;label-unmounted-foreground = ${colors.foreground-alt}
+################################################### modulo bspwm#####################
 
 [module/bspwm]
 type = internal/bspwm
 
-enable-click = true
-enable-scroll = true
-reverse-scroll = true
-pin-workspaces = true
-
-############# estos son espacios de trabajo con iconos ##########################
-#ws-icon-0 = 1;
-#ws-icon-1 = 2;
-#ws-icon-2 = 3;
-#ws-icon-3 = 4;
-#ws-icon-4 = 5;
-#ws-icon-5 = 6;
-#ws-icon-6 = 7;
-#ws-icon-7 = 8;
-#ws-icon-8 = 9;
-#ws-icon-9 = 10;
-#ws-icon-default = " "
-#################################################################################
-ws-icon-0 = I;
-ws-icon-1 = II;
-ws-icon-2 = III;
-ws-icon-3 = IV;
-ws-icon-4 = V;
-ws-icon-5 = VI;
-ws-icon-6 = VII;
-ws-icon-7 = VIII;
-ws-icon-8 = IX;
-ws-icon-9 = X;
-ws-icon-default = " "
-
-
 format = <label-state> <label-mode>
 
 label-focused = 
-#label-focused-background = ${colors.background}
-#label-focused-underline= #6790eb
+label-focused-background = ${colors.background-alt}
+#label-focused-underline = #98FB98
 label-focused-padding = 2
-label-focused-foreground = #32CD32
-
+label-focused-foreground =#FFA500
 label-occupied = 
 label-occupied-padding = 2
-label-occupied-background = 
-label-occupied-foreground = #FF0000	
+label-occupied-underline=
+label-occupied-background =
+label-occupied-foreground = #DC143C
 
-label-urgent = %icon%
-label-urgent-padding = 2
-
+#otro color turquesa medio me gusto ;#48D1CC		
+ 
 #label-empty = 
 label-empty-foreground = #FF1493
 label-empty-padding = 2
@@ -209,13 +168,65 @@ label-sticky-foreground = ${colors.foreground}
 label-private-foreground = ${colors.foreground}
 
 ; Separator in between workspaces
-;label-separator = 
-;label-separator-padding = 10
-;label-separator-foreground = #ffb52a
+#label-separator = 
 
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-#######################################################
+#el de abajo cambia el tamaño entre el workspace y el icono lo estira
+#label-separator-padding = 1
+
+#este de abajo cambia color a del icono separador 
+#label-separator-foreground = #fb7760
+
+#este no se bien tampoco
+#format-foreground = #c5fd27
+#este de abajo cambia el color de fondo del espacio de trabajo cuando no esta en el enfocado
+
+#format-background = #c5fd27
+#################################################################################
+
+###################### modulo flechas################################
+
+[module/arrow1]
+; grey to Blue
+type = custom/text
+#content = "%{T2} %{T-}"
+content-font = 2
+#content-foreground = #8d62a9
+#content-background = #292d3e
+
+[module/arrow2]
+; grey to Blue
+type = custom/text
+#content = "%{T2} %{T-}"
+content-font = 2
+#content-foreground = #668bd7
+#content-background = #8d62a9
+
+[module/arrow3]
+; grey to Blue
+type = custom/text
+#content = "%{T2} %{T-}"
+content-font = 2
+#content-foreground = #8b62a9
+#content-background = #668bd7
+
+########################################modulo xwindow##############
+[module/xwindow]
+;https://github.com/jaagr/polybar/wiki/Module:-xwindow
+type = internal/xwindow
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label = %title%
+label-maxlen = 50
+
+format-prefix = "  "
+#format-prefix-underline = #292d3e
+#format-underline = #e1acff
+format-foreground = #e1acff
+format-background = #ffffbf
+
+####################################### modulo I3 ########################
 [module/i3]
 type = internal/i3
 format = <label-state> <label-mode>
@@ -230,9 +241,9 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %%
+label-focused = %index%
 label-focused-background = ${colors.background-alt}
-#label-focused-underline= ${colors.primary}
+label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -250,125 +261,62 @@ label-urgent = %index%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-; Separator in between workspaces
-; label-separator = |
+; Separator in between workspaces                                                 
+; label-separator = |                                                             
+###################################################################################
 
+#######################################################modulo mpd##################
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-#[module/backlight-acpi]
-#inherit = module/xbacklight
-#type = internal/backlight
-#card = intel_backlight
+icon-prev = 玲
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 怜
 
-#[module/cpu]
-#type = internal/cpu
-#interval = 2
-#format-prefix = " "
-#format-prefix-foreground = ${colors.foreground-alt}
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = BL
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+################################################################
+
+######################################modulo backlight############
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+##################################################################
+
+#####################################modulo cpu####################
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = ""
+format-prefix-foreground = ${colors.foreground-alt}
 #format-underline = #f90000
-#label = %percentage:2%%
-
-#[module/wlan]
-#type = internal/network
-#interface = net1
-#interval = 3.0
-
-#format-connected = <ramp-signal> <label-connected>
-#format-connected-underline = #9f78e1
-#label-connected = %essid%
-
-#format-disconnected =
-#;format-disconnected = <label-disconnected>
-#;format-disconnected-underline = ${self.format-connected-underline}
-#;label-disconnected = %ifname% disconnected
-#;label-disconnected-foreground = ${colors.foreground-alt}
-
-#ramp-signal-0 = 
-#ramp-signal-1 = 
-#ramp-signal-2 = 
-#ramp-signal-3 = 
-#ramp-signal-4 = 
-#ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/eth]
-type = internal/network
-interface = enp37s0
-interval = 2.0
-
-;format-connected-underline = ${xrdb:color3}
-format-connected-prefix = " "
-format-connected-prefix-foreground = #33FF4C
-label-connected = connected
-#label-connected = %local_ip%
-
-;format-disconnected =
-#format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = disconnected
-label-disconnected-foreground = #FF1212
-
-####################modulo de fecha y hora###################################3
-[module/date]
-;https://github.com/jaagr/polybar/wiki/Module:-date
-type = internal/date
-; Seconds to sleep between updates
-interval = 3
-; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
-
-#date = " %a %b %d, %Y"
-date-alt = " %a %b %d, %Y"
-time = %H:%M%	
-time-alt = %H:%M%
-format-prefix = " "
-format-prefix-foreground = #82E5CD
-format-foreground = #FF1493
-#format-background = #668bd7
-label = "%date% %time% "
-hidden =false
+label = %percentage:2%%
+#####################################################################
 
 
-############################pulseaudio###########################################
-
-[module/pulseaudio]
-type = internal/pulseaudio
-format-volume = " <label-volume>"
-format-muted = " <label-muted>"
-label-volume = %percentage%%
-label-muted = %percentage%%
-label-volume-foreground = ${colors.color4} 
-label-muted-foreground = ${colors.color1}
-format-volume-foreground = #00FF00	
-format-muted-foreground =   #FF0000
-#format-volume-background = #FF5733			
-format-muted-background = ${colors.background}
-#color que me gusto #ED2773
-#############################################################################
-;[module/alsa]
-;type = internal/alsa
-;format-volume = <label-volume> <bar-volume>
-;label-volume = VOL
-;label-volume-foreground = ${root.foreground}
-;format-muted-prefix = " "
-;format-muted-foreground = ${colors.foreground-alt}
-;label-muted = sound muted
-;bar-volume-width = 10
-;bar-volume-foreground-0 = #55aa55
-;bar-volume-foreground-1 = #55aa55
-;bar-volume-foreground-2 = #55aa55
-;bar-volume-foreground-3 = #55aa55
-;bar-volume-foreground-4 = #55aa55
-;bar-volume-foreground-5 = #f5a70a
-;bar-volume-foreground-6 = #ff5555
-;bar-volume-gradient = false
-;bar-volume-indicator = |
-;bar-volume-indicator-font = 2
-;bar-volume-fill = ─
-;bar-volume-fill-font = 2
-;bar-volume-empty = ─
-;bar-volume-empty-font = 2
-;bar-volume-empty-foreground = ${colors.foreground-alt}
-
-
+################################ modulo ram #############################
 [module/memory]
 ;https://github.com/jaagr/polybar/wiki/Module:-memory
 type = internal/memory
@@ -391,14 +339,120 @@ bar-used-empty =
 bar-used-empty-foreground = #ffffff
 
 format = <label> <bar-used>
-#format-prefix = " ﬙ "
+#format-prefix = "﬙ "
 #format-prefix-foreground =  #00FF00 
 #format-underline = #900C3F
-format-foreground = #82E5CD	
-#format-background = #59F5DF
+format-foreground = #00FFFF							
+#format-background = #FFE4C4
 #este es otro color que me gusto #900C3F
 
-################################ modulo de bateria 1 #############################
+###################################################### modulo wlan##################################
+[module/wlan]
+type = internal/network
+#interface = net1
+interval = 3.0
+
+format-connected =  <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+
+format-disconnected =睊
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+########################################## modulo eth#########################
+[module/eth]
+type = internal/network
+interface = enp2s0 aca hay que poner la interface de red que es
+interval = 2.0
+#format-connected-underline = #55aa55
+format-connected-prefix = "  "
+format-connected-prefix-foreground = #00FF00
+label-connected = connected
+label-connected-foreground = #00CED1
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+####################modulo fecha y hora###################################3
+
+[module/date]
+type = internal/date
+; Seconds to sleep between updates
+interval = 3
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+
+#date = " %a %b %d, %Y"
+date-alt = " %a %b %d, %Y"
+time = %H:%M%	
+time-alt = %H:%M%
+format-prefix = " "
+format-prefix-foreground = #82E5CD
+format-foreground = #FFFF00		
+#color que esta bueno pero no se ve bien el de la hora era #FF1493
+#format-background = #668bd7
+label = "%date% %time% "
+hidden =false
+
+############################modulo pulseaudio###########################################
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = "  <label-volume>"
+format-muted =  "🔇  <label-muted>"
+label-volume = %percentage%%
+label-muted = %percentage%%
+label-volume-foreground = ${colors.color4} 
+label-muted-foreground = #FF0000
+format-volume-foreground = #00FF00	
+format-muted-foreground =   #FF0000
+#format-volume-background = #FF5733			
+#format-muted-background =
+#color que me gusto #ED2773
+#######################################################################################
+
+#####################################################modulo alsa#######################
+[module/alsa]
+type = internal/alsa
+
+format-volume = <label-volume> <bar-volume>
+label-volume = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = "🔇"
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+#######################################################################################
+
+################################ modulo bateria 1 #############################
 #[module/battery]
 #type = internal/battery
 #full-at = 100
@@ -443,7 +497,9 @@ format-foreground = #82E5CD
 #animation-discharging-framerate = 500
 #animation-discharging-foreground = ${colors.color13}
 #format-background = ${colors.background}
-########################## modulo de bateria 2 #######################################
+
+########################## modulo bateria 2 #######################################
+
 #[module/battery]
 #;https://github.com/jaagr/polybar/wiki/Module:-battery
 #type = internal/battery
@@ -483,7 +539,8 @@ format-foreground = #82E5CD
 #animation-charging-4 = 
 #animation-charging-foreground = #a3c725
 #animation-charging-framerate = 750
-################################################################################
+
+###############################modulo temperatura#################################################
 
 #[module/temperature]
 #;https://github.com/jaagr/polybar/wiki/Module:-temperature
@@ -518,45 +575,46 @@ format-foreground = #82E5CD
 #ramp-3 = 
 #ramp-4 = 
 #ramp-foreground =${colors.foreground}
-#######################################################
+########################################################################################################################
 
-#[module/powermenu]
-#type = custom/menu
+################################################## modulo poder #############################################
+[module/powermenu]
+type = custom/menu
 
-#expand-right = true
+expand-right = true
 
-#format-spacing = 1
+format-spacing = 1
 
-#label-open = 
-#label-open-foreground = ${colors.secondary}
-#label-close =  cancel
-#label-close-foreground = ${colors.secondary}
-#label-separator = |
-#label-separator-foreground = ${colors.foreground-alt}
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
 
-#menu-0-0 = reboot
-#menu-0-0-exec = menu-open-1
-#menu-0-1 = power off
-#menu-0-1-exec = menu-open-2
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
 
-#menu-1-0 = cancel
-#menu-1-0-exec = menu-open-0
-#menu-1-1 = reboot
-#menu-1-1-exec = sudo reboot
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = sudo reboot
 
-#menu-2-0 = power off
-#menu-2-0-exec = sudo poweroff
-#menu-2-1 = cancel
-#menu-2-1-exec = menu-open-0
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
 
-#[settings]
-#screenchange-reload = true
-#;compositing-background = xor
-#;compositing-background = screen
-#;compositing-foreground = source
-#;compositing-border = over
-#;pseudo-transparency = false
-
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+#############################################################################################################
 [global/wm]
 margin-top = 5
 margin-bottom = 5
