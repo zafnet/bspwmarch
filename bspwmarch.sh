@@ -92,7 +92,7 @@ cp  /home/newvash/bspwmarch/.zshrc /home/newvash/
 cp  /home/newvash/bspwmarch/.p10k.zsh  /home/newvash/
 cp  /home/newvash/bspwmarch/.bashrc  /home/newvash/
 cp  /home/newvash/bspwmarch/.Xresources  /home/newvash/
-
+cp -r /home/newvash/bspwmarch/nvim/  /home/newvash/.config/
 ###CONFIG CON XFCE E i3#################################################
 #cp -r /home/newvash/bspwmarch/i3/  /home/newvash/.config/
 #cp -r /home/newvash/bspwmarch/terminal/ /usr/share/xfce4/
@@ -128,9 +128,9 @@ ln -s -f /home/newvash/.nanorc .nanorc
  
 cp -r /home/newvash/bspwmarch/.oh-my-zsh/ . 
  
-cp  /home/newvash/bspwmarch/.bashrroot .
+cp  /home/newvash/bspwmarch/.bashrcroot .
 
-mv .bashrroot .bashrc
+mv .bashrcroot .bashrc
 ##################################################################
  
 # PARA CREAR LAS CARPETAS BSPWM,COMPTON Y SXHKD EN .CONFIG
