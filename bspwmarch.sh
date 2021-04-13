@@ -5,7 +5,11 @@
 # PARA ACTUALIZAR ARCH LINUX CON BSPWM E INSTALAR LOS PROGRAMAS A CONTINUACION INDICADOS
  
 pacman -Syu -y --noconfirm
- 
+
+pacman -S polybar
+
+pacman -S xclip -y --noconfirm
+
 pacman -S gvfs  -y --noconfirm
  
 pacman -S nmap -y --noconfirm
@@ -58,7 +62,7 @@ pacman -S lxappearance  -y --noconfirm
  
 pacman -S neofetch -y --noconfirm
  
-pacman -S epdfview -y --noconfirm
+pacman -S zathura -y --noconfirm
  
 pacman -S zsh-autosuggestions -y --noconfirm
  
@@ -93,6 +97,8 @@ cp  /home/newvash/bspwmarch/.p10k.zsh  /home/newvash/
 cp  /home/newvash/bspwmarch/.bashrc  /home/newvash/
 cp  /home/newvash/bspwmarch/.Xresources  /home/newvash/
 cp -r /home/newvash/bspwmarch/nvim/  /home/newvash/.config/
+
+
 ###CONFIG CON XFCE E i3#################################################
 #cp -r /home/newvash/bspwmarch/i3/  /home/newvash/.config/
 #cp -r /home/newvash/bspwmarch/terminal/ /usr/share/xfce4/
@@ -110,7 +116,7 @@ cp -r /home/newvash/bspwmarch/picom/  /home/newvash/.config/
 chmod +x /home/newvash/.config/picom/picom.conf
 cp -r /home/newvash/bspwmarch/polybar/  /home/newvash/.config/
 chmod +x /home/newvash/.config/polybar/config
- 
+chmod +x /home/newvash/.config/polybar/launch.sh
 #######################################################################
  
 ###ENLACES SIMBOLICOS###########################################
@@ -131,29 +137,7 @@ cp -r /home/newvash/bspwmarch/.oh-my-zsh/ .
 cp  /home/newvash/bspwmarch/.bashrcroot .
 
 mv .bashrcroot .bashrc
-##################################################################
  
-# PARA CREAR LAS CARPETAS BSPWM,COMPTON Y SXHKD EN .CONFIG
- 
-#mkdir -p /home/newvash/.config/bspwm/
- 
-#mkdir -p /home/newvash/.config/sxhkd/
- 
-#mkdir -p /home/newvash/.config/picom/
- 
-#cp /home/newvash/bspwmarch/bspwmrc /home/newvash/.config/bspwm
- 
-#chmod +x /home/newvash/.config/bspwm/bspwmrc
- 
-#cp /home/newvash/bspwmarch/sxhkdrc  /home/newvash/.config/sxhkd
- 
-#chmod +x /home/newvash/.config/sxhkd/sxhkdrc
- 
-#cp /home/newvash/bspwmarch/picom.conf  /home/newvash/.config/picom
- 
-#chmod +x /home/newvash/.config/picom/picom.conf
- 
-#cp -r /home/newvash/bspwmarch/polybar/ /home/newvash/.config/
 ######################################################################################################
  
 # PARA AGREGAR FONTS
@@ -165,7 +149,7 @@ cp -r /home/newvash/bspwmarch/fonts/ /usr/share/
  
 #QEMU INSTALACION:
  
-sudo pacman -S qemu qemu-guest-agent qemu-arch-extra qemu-block-gluster qemu-block-iscsi qemu-block-rbd samba -y --noconfirm
+pacman -S qemu qemu-guest-agent qemu-arch-extra qemu-block-gluster qemu-block-iscsi qemu-block-rbd samba -y --noconfirm
 #############################################################################################################################
  
  
@@ -180,7 +164,7 @@ systemctl start qemu-ga
  
 KVM QEMU driver
  
-sudo pacman -S virt-viewer virt-manager libvirt ebtables dnsmasq bridge-utils openbsd-netcat -y --noconfirm
+pacman -S virt-viewer virt-manager libvirt ebtables dnsmasq bridge-utils openbsd-netcat -y --noconfirm
  
 #########################################################################################################################
 #ACTIVAMOS SEVICIOS KVM
@@ -210,7 +194,7 @@ systemctl start virtlockd.socket
  
 #MONITOR SPICE
  
-sudo pacman -S spice spice-gtk spice-vdagent xf86-video-qxl -y --noconfirm
+pacman -S spice spice-gtk spice-vdagent xf86-video-qxl -y --noconfirm
  
 systemctl enable spice-vdagentd
  
@@ -219,14 +203,14 @@ systemctl start spice-vdagentd
  
 # DEFINIR CONEXION NAT
  
-#sudo virsh net-define /etc/libvirt/qemu/networks/default.xml
+#virsh net-define /etc/libvirt/qemu/networks/default.xml
  
  
 #Que inicie automatico
  
-#sudo virsh net-autostart default 
+#virsh net-autostart default 
  
 #Activar NAT
  
-#sudo virsh net-start default
+#virsh net-start default
 
