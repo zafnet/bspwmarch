@@ -101,7 +101,7 @@ cp  /home/newvash/bspwmarch/.p10k.zsh  /home/newvash/
 cp  /home/newvash/bspwmarch/.bashrc  /home/newvash/
 cp  /home/newvash/bspwmarch/.Xresources  /home/newvash/
 cp -r /home/newvash/bspwmarch/nvim/  /home/newvash/.config/
-
+cp  /home/newvash/bspwmarch/.nanorc /home/newvash/.nanorc
 
 ###CONFIG CON XFCE E i3#################################################
 #cp -r /home/newvash/bspwmarch/i3/  /home/newvash/.config/
