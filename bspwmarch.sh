@@ -61,8 +61,12 @@ pacman -S thunar -y --noconfirm
 pacman -S lxappearance  -y --noconfirm
  
 pacman -S neofetch -y --noconfirm
- 
+
+pacman -S os-prober -y --noconfirm 
+
 pacman -S zathura -y --noconfirm
+
+pacman -S zathura-pdf-poppler -y --noconfirm
  
 pacman -S zsh-autosuggestions -y --noconfirm
  
@@ -191,7 +195,6 @@ systemctl enable virtlockd.socket
  
 systemctl start virtlockd.socket
 #############################################################################################################################
- 
 #MONITOR SPICE
  
 pacman -S spice spice-gtk spice-vdagent xf86-video-qxl -y --noconfirm
@@ -200,7 +203,15 @@ systemctl enable spice-vdagentd
  
 systemctl start spice-vdagentd
 ###############################################################################################################################
- 
+
+##################################################
+# para que pueda usar UEFI en QEMU
+
+pacman -S ovmf -y --noconfirm
+
+############################################# 
+
+
 # DEFINIR CONEXION NAT
  
 #virsh net-define /etc/libvirt/qemu/networks/default.xml

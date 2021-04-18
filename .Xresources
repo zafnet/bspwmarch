@@ -21,4 +21,4 @@ XTerm.vt100.faceName: Hack Nerd Font: size = 10: antialias = false
 XTerm.vt100.font: 7x13
 XTerm*utf8: 2
 XTerm*locale: true
-
+XTerm.vt100.faceSize: 13
