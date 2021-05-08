@@ -184,68 +184,7 @@ function mkt(){
 }
 
 #######################################################################################
-#UTILIDAD CONTROLC REPORTMACHINE
-reportMachine () {
-        if [ $1 ]
-        then
-                machine_name=$1 
-                mkdir -p Report/$machine_name
-                pushd Report/$machine_name &> /dev/null
-                mkdir -p {Alcance,Reconocimiento/"Enumeración de servicios",Vulnerabilidades,zzz_data/Images}
-                pushd Reconocimiento &> /dev/null
-                echo "TWVkaWFudGUgdW4gcmVjb25vY2ltaWVudG8gZGUgcHVlcnRvcyBlZmVjdHVhZG8gY29uIE5tYXAsIGhhIHNpZG8gcG9zaWJsZSBpZGVudGlmaWNhciBsb3Mgc2lndWllbnRlcyBwdWVydG9zIGFiaWVydG9zOgoKQSBjb250aW51YWNpw7NuLCBzZSBsaXN0YW4gbGFzIHZlcnNpb25lcyB5IGxvcyBzZXJ2aWNpb3MgcXVlIGNvcnJlbiBwYXJhIGNhZGEgdW5vIGRlIGVzdG9zOgo=" | base64 -d > "Escaneo de puertos.md"
-                echo "QSB0cmF2w6lzIGRlbCB2YWxvciBkZWwgKipUVEwqKiwgaGEgc2lkbyBwb3NpYmxlIGlkZW50aWZpY2FyIGVsIHNpc3RlbWEgb3BlcmF0aXZvIGVuIHVzbyBwb3IgZWwgc2Vydmlkb3IgcmVtb3RvLiBFc3RlIHZhbG9yIGVzIHZpc2libGUgbWVkaWFudGUgZWwgZW52w61vIGRlIHVuYSB0cmF6YSBJQ01QIGVuIGxhIHJlc3B1ZXN0YSBkZWwgc2Vydmlkb3I6Cg==" | base64 -d > "Sistema Operativo.md"
-                popd &> /dev/null
-                pushd Alcance &> /dev/null
-                echo "RWwgb2JqZXRpdm8gZGUgZXN0YSBhdWRpdG9yw61hIGNvbXByZW5kZSBlbCBhbsOhbGlzaXMgZGUgdnVsbmVyYWJpbGlkYWRlcyBkZWwgc2Vydmlkb3IgYG1hY2hpbmVfbmFtZWAsIHNpZW5kbyBuZWNlc2FyaW8gY3VtcGxpciBjYWRhIHVubyBkZSBsb3Mgc2lndWllbnRlcyBwdW50b3M6CgoqIERldGVybWluYXIgbGFzIHZ1bG5lcmFiaWxpZGFkZXMgZXhpc3RlbnRlcyBlbiBsb3Mgc2VydmljaW9zIGV4cHVlc3RvcwoqIExsZXZhciBhIGNhYm8gdW5hIGV4cGxvdGFjacOzbiBkZSBsYXMgdnVsbmVyYWJpbGlkYWRlcyBlbmNvbnRyYWRhcywgZGV0YWxsYW5kbyBlbCBpbXBhY3RvIHkgYWxjYW5jZSBkZSBlc3RhcwoqIEVuIGNhc28gZGUgZ2FuYXIgYWNjZXNvIGFsIHNlcnZpZG9yLCBidXNjYXIgdsOtYXMgcG90ZW5jaWFsZXMgZGUgZXNjYWxhciBwcml2aWxlZ2lvcyBwYXJhIGNvbnZlcnRpcnNlIGVuIGFkbWluaXN0cmFkb3IgZGVsIHNpc3RlbWEKCkxvcyBwdW50b3MgYW50ZXJpb3JtZW50ZSBjaXRhZG9zIGRlYmVyw6FuIGlyIGFjb21wYcOxYWRvcyBkZSBldmlkZW5jaWFzIHF1ZSBqdXN0aWZpcXVlbiBjYWRhIHVubyBkZSBsb3MgdmVjdG9yZXMgZW5jb250cmFkb3MsIHB1ZXMgZW4gY2FzbyBjb250cmFyaW8gZXN0YXMgb2N1cnJlbmNpYXMgc2Vyw6FuIHRvbWFkYXMgY29tbyBpbnbDoWxpZGFzLgoKTGFzIHNpZ3VpZW50ZXMgcHJ1ZWJhcyBxdWVkYW4gZXhjbHVpZGFzIGR1cmFudGUgZWwgcHJvY2VzbyBkZSBhdWRpdG9yw61hOgoKKiBEZW5lZ2FjaW9uZXMgZGUgU2VydmljaW8gKERvUykK" | base64 -d | sed 's|machine_name|'"$machine_name"'|g' > Objetivos.md
-                popd &> /dev/null
-                pushd Vulnerabilidades &> /dev/null
-                echo "IyDDjW5kaWNlIGRlIHZ1bG5lcmFiaWxpZGFkZXMgZGV0ZWN0YWRhcwoKKiBbQW50ZWNlZGVudGVzXSgjYW50ZWNlZGVudGVzKQoqIFtWdWxuZXJhYmlsZGFkZXNdKCN2dWxuZXJhYmlsaWRhZGVzKQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQojIyBBbnRlY2VkZW50ZXMKTGEgcHJlc2VudGUgcMOhZ2luYSB0cmF0YSBkZSByZXByZXNlbnRhciBjYWRhIHVuYSBkZSBsYXMgdnVsbmVyYWJpbGlkYWRlcyBkZXRlY3RhZGFzIHNvYnJlIGVsIGFjdGl2byBhdWRpdGFkby4gVW5hIHZleiBjb25jbHVpZGEgbGEgYXVkaXRvcsOtYSwgc2UgYm9ycsOzIHRvZG8gdGlwbyBkZSBhcmNoaXZvIHRlbXBvcmFsIGNyZWFkbyBlbiBlbCBzaXN0ZW1hLgoKIyMgVnVsbmVyYWJpbGlkYWRlcwo=" | base64 -d > Ocurrencias.md
-                popd &> /dev/null && popd &> /dev/null
-                chown $(who -q | awk '{print $1}' | head -n 1):$(who -q | awk '{print $1}' | head -n 1) -R Report
-        else
-                echo -e "\n[!] Uso: reportMachine machineName\n"
-        fi
-}
 
-
-########################################################################################
-#UTILIDAD WHYCSYSTEM
-
-#!/usr/bin/python
-
-import subprocess, re, sys
-
-def return_ttl(address):
-	proc = subprocess.Popen(["ping -c 1 %s" % address, ""], stdout=subprocess.PIPE, shell=True)
-	(out, err) = proc.communicate()
-	out = out.split()
-	out = re.findall(r"\d{1,3}", out[12])
-
-	return out[0]
-
-def return_ttl_os_name(ttl_number):
-
-	if ttl_number >= 0 and ttl_number <= 64:
-		return "Linux"
-	elif ttl_number >= 65 and ttl_number <= 128:
-		return "Windows"
-	else:
-		return "Unknown"
-
-if len(sys.argv) != 2:
-	print "\n[*] Usage: python " + sys.argv[0] + " <ip-address>\n"
-	sys.exit(1)
-
-if __name__ == '__main__':
-	addr = sys.argv[1]
-	ttl = return_ttl(addr)
-
-	try:
-		print "\n%s -> %s" % (addr, return_ttl_os_name(int(ttl)))
-	except:
-		pass
-#########################################################################
 #########COMIENZO DE ALIAS##############################################   
 
 ###### ALIAS MANUALES #########################
