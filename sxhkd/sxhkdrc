@@ -21,12 +21,8 @@ alt + i
        chromium -incognito
 
 alt + f
-	Thunar
+	pcmanfm
 
-
-ctrl + alt + d
-
-       discord
 
 alt + m
 	telegram-desktop
@@ -116,6 +112,11 @@ super + alt + n
 	bspc node -s biggest
 
 #
+#____________________Manejos de ventanas_________________________________
+# rotar ventanas 90°/ventana flotante/fijar ventana/
+super + shift  o
+		{bspc node @focused:/ -R 90,bspc node focused -t \~floating,bspc node -g sticky}
+
 # state/flags
 #
 

@@ -1,0 +1,864 @@
+#!/bin/bash
+
+if [ "$(id -u)" == "0" ]; then
+
+if ping -c 3 www.google.com &> /dev/null; then
+
+clear
+echo ""
+echo ""
+echo ""
+echo " ██████╗ ██████╗ ███╗   ██╗███████╗██╗  ██╗██╗ ██████╗ ███╗   ██╗";
+echo "██╔════╝██╔═══██╗████╗  ██║██╔════╝╚██╗██╔╝██║██╔═══██╗████╗  ██║";
+echo "██║     ██║   ██║██╔██╗ ██║█████╗   ╚███╔╝ ██║██║   ██║██╔██╗ ██║";
+echo "██║     ██║   ██║██║╚██╗██║██╔══╝   ██╔██╗ ██║██║   ██║██║╚██╗██║";
+echo "╚██████╗╚██████╔╝██║ ╚████║███████╗██╔╝ ██╗██║╚██████╔╝██║ ╚████║";
+echo " ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝";
+echo "                                                                 ";
+
+echo "███████╗██╗  ██╗██╗████████╗ ██████╗ ███████╗ █████╗ ";
+echo "██╔════╝╚██╗██╔╝██║╚══██╔══╝██╔═══██╗██╔════╝██╔══██╗";
+echo "█████╗   ╚███╔╝ ██║   ██║   ██║   ██║███████╗███████║";
+echo "██╔══╝   ██╔██╗ ██║   ██║   ██║   ██║╚════██║██╔══██║";
+echo "███████╗██╔╝ ██╗██║   ██║   ╚██████╔╝███████║██║  ██║";
+echo "╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝";
+echo "                                                     ";
+echo ""
+echo ""
+echo -e '\033[1;95m' "\n\tCARGANDO..."
+sleep 3
+
+echo -e '\033[1;92m' "\n\tACTUALIZANDO SISTEMA DE ISO"
+
+pacman -Syu -y --noconfirm
+
+else
+clear
+echo ""
+echo ""
+echo ""
+echo "██╗      █████╗      ██████╗ ██████╗ ███╗   ██╗███████╗██╗  ██╗██╗ ██████╗ ███╗   ██╗";
+echo "██║     ██╔══██╗    ██╔════╝██╔═══██╗████╗  ██║██╔════╝╚██╗██╔╝██║██╔═══██╗████╗  ██║";
+echo "██║     ███████║    ██║     ██║   ██║██╔██╗ ██║█████╗   ╚███╔╝ ██║██║   ██║██╔██╗ ██║";
+echo "██║     ██╔══██║    ██║     ██║   ██║██║╚██╗██║██╔══╝   ██╔██╗ ██║██║   ██║██║╚██╗██║";
+echo "███████╗██║  ██║    ╚██████╗╚██████╔╝██║ ╚████║███████╗██╔╝ ██╗██║╚██████╔╝██║ ╚████║";
+echo "╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝";
+echo "                                                                                     ";
+
+
+echo "███████╗ █████╗ ██╗     ██╗      ██████╗ ";
+echo "██╔════╝██╔══██╗██║     ██║     ██╔═══██╗";
+echo "█████╗  ███████║██║     ██║     ██║   ██║";
+echo "██╔══╝  ██╔══██║██║     ██║     ██║   ██║";
+echo "██║     ██║  ██║███████╗███████╗╚██████╔╝";
+echo "╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ";
+echo "                                         ";
+echo ""
+echo ""
+fi 
+
+else 
+
+echo  ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "
+echo  "> ███╗░░██╗░█████╗░  ██████╗░░█████╗░░█████╗░████████╗  < " 
+echo  "> ████╗░██║██╔══██╗  ██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝  < "
+echo  "> ██╔██╗██║██║░░██║  ██████╔╝██║░░██║██║░░██║░░░██║░░░  < "
+echo  "> ██║╚████║██║░░██║  ██╔══██╗██║░░██║██║░░██║░░░██║░░░  < "
+echo  "> ██║░╚███║╚█████╔╝  ██║░░██║╚█████╔╝╚█████╔╝░░░██║░░░  < "
+echo  "> ╚═╝░░╚══╝░╚════╝░  ╚═╝░░╚═╝░╚════╝░░╚════╝░░░░╚═╝░░░  < "
+echo  ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "
+
+exit
+
+fi
+
+
+idioma=$(curl https://ipapi.co/languages | awk -F "," '{print $1}' | sed 's/-/_/g' | sed "s|$|.UTF8|")
+clear
+echo ""
+echo "$idioma UTF-8" > /etc/locale.gen
+locale-gen
+echo "LANG=$idioma" > /etc/locale.conf
+exportlang=$(echo "LANG=$idioma")
+export $exportlang
+export LANG=$idioma
+export $(cat /etc/locale.conf)
+locale-gen
+echo ""
+clear
+
+#DISCO
+
+discosdisponibles=$(echo "print devices" | parted | grep /dev/ | awk '{if (NR!=1) {print}}' | sed '/sr/d')
+clear
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+echo ""
+echo "Rutas de Disco disponible: "
+echo ""
+echo $discosdisponibles
+echo ""
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+
+echo -e '\033[1;92m' "\n\tINGRESAR DATOS DE USUARIO"
+
+echo ""
+read -p "Introduce tu disco a instalar Arch: " disco
+echo ""
+read -p "Introduce Nombre usuario Nuevo: " user
+echo ""
+read -s -p "Introduce la clave de $user: " userpasswd
+echo ""
+read -s -p "Introduce la clave de Root/Administrador: " rootpasswd
+echo ""
+
+echo -e '\033[1;92m' "\n\tESCRITORIOS"
+
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+echo ""
+echo "Ingresa una opción marcando el numero correcto: (1 - 2 - 3 - 4)"
+echo ""
+echo "1. Terminal Virtual (TTY)"
+echo "2. Xfce4"
+echo "3. Kde Plasma"
+echo "4. Gnome 40"
+echo ""
+read -p "Introduce la opción de Escritorio: " escritorio
+echo ""
+
+echo -e '\033[1;92m' "\n\tDATOS GUARDADOS"
+
+clear
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+echo ''
+echo "Selección de Disco: $disco"
+echo ''
+echo "Tu usuario: $user"
+
+# VEMOS QUE OPCIÓN ELIGE EL USUARIO Y REALIZA TAL ACCIÓN EN ESTE CASO MOSTRAR MENSAJE
+
+case $escritorio in
+  1)
+    echo "Escritorio : Terminal Virtual (TTY)"
+  ;;
+
+  2)
+    echo "Escritorio : Xfce4"
+  ;;
+
+  3)
+    echo "Escritorio : Kde Plasma"
+  ;;
+
+  4)
+    echo "Escritorio : Gnome 40"
+  ;;
+  *)
+    echo "¡Incorrecto! por defecto se instalará Terminal Virtual (TTY)"
+  ;;
+esac
+echo ""
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+echo ""
+echo ""
+echo "Para confirmar e instalar Arch Linux"
+echo ""
+echo "Presione ENTER o para salir presione CTRL + C"
+read line
+
+echo -e '\033[1;92m' "\n\tDETECTANDO SI NUESTRO SISTEMA ES UEFI O BIOS LEGACY"
+
+uefi=$( ls /sys/firmware/efi/ | grep -ic efivars )
+
+if [ $uefi == 1 ]
+then
+	clear
+	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+	echo ""
+	echo "Tu Sistema es UEFI"
+	echo ""
+	date "+%F %H:%M"
+	sleep 3
+	#Fuente: https://wiki.archlinux.org/index.php/GPT_fdisk
+
+	#Metodo con EFI  - HOME - ROOT
+	#+100M 			tamaño particion boot
+	#0				tamaño particion root 100%
+	#				Cambien valores si desean
+
+	(echo Ignore) | sgdisk --zap-all ${disco}
+	parted ${disco} mklabel gpt
+	(echo 2; echo w; echo Y) | gdisk ${disco}
+	sgdisk ${disco} -n=1:0:+512M -t=1:ef00
+	sgdisk ${disco} -n=2:0:+20G -t=2:8302
+	sgdisk ${disco} -n=3:0:0:8304
+	fdisk -l ${disco} > /tmp/partition
+	echo ""
+	cat /tmp/partition
+	sleep 3
+
+	partition="$(cat /tmp/partition | grep /dev/ | awk '{if (NR!=1) {print}}' | sed 's/*//g' | awk -F ' ' '{print $1}')"
+
+	echo $partition | awk -F ' ' '{print $1}' >  boot-efi
+	echo $partition | awk -F ' ' '{print $2}' >  home-efi
+	echo $partition | awk -F ' ' '{print $3}' >  root-efi
+
+	clear
+	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+	echo ""
+	echo "Partición EFI es:" 
+	cat boot-efi
+	echo ""
+	echo "Partición home es:"
+	cat home-efi
+	echo ""
+	echo "Partición ROOT es:"
+	cat root-efi
+	sleep 3
+
+	clear
+	echo ""
+	echo "Formateando Particiones"
+	echo ""
+	 
+    mkfs.ext4 $(cat root-efi) 
+	mount $(cat root-efi) /mnt 
+
+	mkdir -p /mnt/efi 
+	mkfs.fat -F 32 $(cat boot-efi) 
+	mount $(cat boot-efi) /mnt/efi 
+    
+    mkdir -p /mnt/home
+	mkfs.ext4 $(cat home-efi) 
+	mount $(cat home-efi) /mnt/home
+
+
+	rm boot-efi
+	rm home-efi
+	rm root-efi
+
+	clear
+	echo ""
+	echo "Revise en punto de montaje en MOUNTPOINT - PRESIONE ENTER"
+	echo ""
+	lsblk -l
+	read line
+
+else
+	clear
+	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+	echo ""
+	echo "Tu Sistema es BIOS"
+	echo ""
+	date "+%F %H:%M"
+	sleep 3
+
+
+
+	#---Metodo con BIOS - BOOT - ROOT- HOME-------
+	#+100M 			particion boot
+	#               particion home
+    #+100%			particion root
+	#				Cambien valores si desean
+	
+	sgdisk --zap-all ${disco}
+	(echo o; echo n; echo p; echo 1; echo ""; echo +512M; echo n; echo p; echo 2; echo ""; echo +20G; echo n; echo p; echo 3; echo ""; echo ""; echo t; echo 2; echo 82; echo a; echo 1; echo w; echo q) | fdisk ${disco}
+	fdisk -l ${disco} > /tmp/partition 
+	cat /tmp/partition
+	sleep 3
+
+	partition="$(cat /tmp/partition | grep /dev/ | awk '{if (NR!=1) {print}}' | sed 's/*//g' | awk -F ' ' '{print $1}')"
+
+	echo $partition | awk -F ' ' '{print $1}' >  boot-bios
+	echo $partition | awk -F ' ' '{print $2}' >  home-bios
+	echo $partition | awk -F ' ' '{print $3}' >  root-bios
+
+	clear
+	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+	echo ""
+	echo "Partición BOOT es:" 
+	cat boot-bios
+	echo ""
+	echo "Partición HOME es:"
+	cat home-bios
+	echo ""
+	echo "Partición ROOT es:"
+	cat root-bios
+	sleep 3
+
+	clear
+	echo ""
+	echo "Formateando Particiones"
+	echo ""
+	mkfs.ext4 $(cat root-bios) 
+	mount $(cat root-bios) /mnt 
+
+	mkdir -p /mnt/home
+	mkfs.ext4 $(cat home-bios) 
+	mount $(cat home-bios) /mnt/home
+
+    mkdir -p /mnt/boot
+	mkfs.ext4 $(cat boot-bios) 
+	mount $(cat boot-bios) /mnt/boot
+	
+	clear
+	echo ""
+echo -e '\033[1;92m' "\n\tREVISE EN PUNTO DE MONTAJE EN MOUNTPOINT"
+	echo ""
+	lsblk -l
+	sleep 4
+	clear
+	
+fi
+
+echo -e '\033[1;92m' "\n\tACTUALIZACIÓN DE LLAVES Y MIRROSLIST DEL LIVECD"
+
+clear
+
+pacman -Syy
+pacman -Sy archlinux-keyring --noconfirm 
+clear
+
+pacman -Sy reflector python rsync glibc curl wget  --noconfirm 
+
+sleep 3
+clear
+
+echo ""
+
+echo -e '\033[1;92m' "\n\tBUSCANDO MIRRORLIST MAS RAPIDOS PARA EL ISO"
+
+echo ""
+reflector --verbose --latest 5 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+clear
+
+cat /etc/pacman.d/mirrorlist
+
+sleep 3
+
+clear
+
+# Instalando Sistema base en nuestro Disco
+echo ""
+echo -e '\033[1;92m' "\n\tINSTALANDO SISTEMA BASE EN NUESTRO DISCO"
+echo ""
+pacstrap /mnt base base-devel nano reflector python rsync xdg-user-dirs
+
+xdg-user-dirs-update
+
+clear
+
+echo -e '\033[1;92m' "\n\tCREANDO ARCHIVO FSTAB PARA DETECTAR AL INICIAR EL SISTEMA"
+echo ""
+echo "Archivo FSTAB"
+echo ""
+echo "genfstab -p /mnt >> /mnt/etc/fstab"
+echo ""
+genfstab -p /mnt >> /mnt/etc/fstab
+cat /mnt/etc/fstab
+sleep 4
+clear
+
+echo -e '\033[1;92m' "\n\tCONFIGURANDO PACMAN PARA QUE TENGA COLORES CON EL REPO DE MULTILIB"
+sed -i 's/#Color/Color/g' /mnt/etc/pacman.conf
+sed -i 's/#TotalDownload/TotalDownload/g' /mnt/etc/pacman.conf
+sed -i 's/#VerbosePkgLists/VerbosePkgLists/g' /mnt/etc/pacman.conf
+sed -i "37i ILoveCandy" /mnt/etc/pacman.conf
+sed -i 's/#[multilib]/[multilib]/g' /mnt/etc/pacman.conf
+sed -i "s/#Include = /etc/pacman.d/mirrorlist/Include = /etc/pacman.d/mirrorlist/g" /mnt/etc/pacman.conf
+clear
+
+echo -e '\033[1;92m' "\n\tHOSTS Y NOMBRE DE COMPUTADOR"
+clear
+hostname=Arch
+echo "$hostname" > /mnt/etc/hostname
+echo "127.0.1.1 $hostname.localdomain $hostname" > /mnt/etc/hosts
+clear
+echo "Hostname: $(cat /mnt/etc/hostname)"
+echo ""
+echo "Hosts: $(cat /mnt/etc/hosts)"
+echo ""
+clear
+
+echo -e '\033[1;92m' "\n\tAGREGANDO USUARIO Y CLAVES CON ADMINISTRADOR"
+
+arch-chroot /mnt /bin/bash -c "(echo $rootpasswd ; echo $rootpasswd) | passwd root"
+arch-chroot /mnt /bin/bash -c "useradd -m -g users -s /bin/bash $user"
+arch-chroot /mnt /bin/bash -c "(echo $userpasswd ; echo $userpasswd) | passwd $user"
+sed -i "80i $user ALL=(ALL) ALL"  /mnt/etc/sudoers
+clear
+
+echo -e '\033[1;92m' "\n\tIDIOMA DEL SISTEMA"
+
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+echo -e ""
+echo -e "\t\t\t| Idioma del Sistema |"
+echo -e ""
+echo "$idioma UTF-8" > /mnt/etc/locale.gen
+arch-chroot /mnt /bin/bash -c "locale-gen" 
+echo "LANG=$idioma" > /mnt/etc/locale.conf
+echo ""
+cat /mnt/etc/locale.conf 
+echo ""
+cat /mnt/etc/locale.gen
+sleep 4
+echo ""
+arch-chroot /mnt /bin/bash -c "export $(cat /mnt/etc/locale.conf)" 
+export $(cat /mnt/etc/locale.conf)
+arch-chroot /mnt /bin/bash -c "sudo -u $user export $(cat /etc/locale.conf)"
+export $(cat /etc/locale.conf)
+export $(cat /mnt/etc/locale.conf)
+exportlang=$(echo "LANG=$idioma")
+export $exportlang
+export LANG=$idioma
+locale-gen
+arch-chroot /mnt /bin/bash -c "locale-gen" 
+clear
+sleep 3
+
+echo -e '\033[1;92m' "\n\tZONA HORARIA AUTOMATICA"
+arch-chroot /mnt /bin/bash -c "pacman -Sy curl --noconfirm"
+curl https://ipapi.co/timezone > zonahoraria
+zonahoraria=$(cat zonahoraria)
+arch-chroot /mnt /bin/bash -c "ln -sf /usr/share/zoneinfo/$zonahoraria /etc/localtime"
+arch-chroot /mnt /bin/bash -c "timedatectl set-timezone $zonahoraria"
+arch-chroot /mnt /bin/bash -c "pacman -S ntp --noconfirm"
+arch-chroot /mnt /bin/bash -c "ntpd -qg"
+arch-chroot /mnt /bin/bash -c "hwclock --systohc"
+sleep 3
+rm zonahoraria
+clear
+
+echo -e '\033[1;92m' "\n\tESTABLECER UN MAPA DE TECLADO PARA LA TERMINAL VIRTUAL"
+
+curl https://ipapi.co/languages | awk -F "," '{print $1}' | sed -e's/.$//' | sed -e's/.$//' | sed -e's/.$//' > keymap
+keymap=$(cat keymap)
+echo "KEYMAP=$keymap" > /mnt/etc/vconsole.conf 
+cat /mnt/etc/vconsole.conf 
+clear
+
+echo -e '\033[1;92m' "\n\tACTUALIZA LISTA DE MIRRORS EN TU DISCO"
+
+echo ""
+echo "Actualizando lista de MirrorList"
+echo ""
+arch-chroot /mnt /bin/bash -c "reflector --verbose --latest 5 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist"
+clear
+cat /mnt/etc/pacman.d/mirrorlist
+sleep 3
+clear
+
+echo -e '\033[1;92m' "\n\tINSTALACIÓN DEL KERNEL ESTABLE"
+
+arch-chroot /mnt /bin/bash -c "pacman -S linux-firmware linux linux-headers mkinitcpio --noconfirm"
+clear
+
+if [ $uefi == 1 ]
+then
+
+echo -e '\033[1;92m' "\n\tINSTALACIÓN DE GRUB - ARRANQUE"
+
+clear
+arch-chroot /mnt /bin/bash -c "pacman -S grub efibootmgr os-prober dosfstools --noconfirm"
+echo '' 
+echo -e '\033[1;92m' 'INSTALANDO EFI SYSTEM >> bootx64.efi' 
+arch-chroot /mnt /bin/bash -c 'grub-install --target=x86_64-efi --efi-directory=/efi --removable' 
+echo '' 
+echo -e '\033[1;92m' 'INSTALANDO UEFI SYSTEM >> grubx64.efi' 
+arch-chroot /mnt /bin/bash -c 'grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=Arch'
+######
+sed -i "6iGRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"" /mnt/etc/default/grub
+sed -i '7d' /mnt/etc/default/grub
+######
+echo ''
+arch-chroot /mnt /bin/bash -c "grub-mkconfig -o /boot/grub/grub.cfg"
+echo '' 
+echo 'ls -l /mnt/efi' 
+ls -l /mnt/efi 
+echo '' 
+echo -e '\033[1;92m' >> "\n\tLEA BIEN QUE NO TENGA NINGÚN ERROR MARCADO" 
+echo -e '\033[1;92m' >> "\n\tCONFIRME TENER LAS IMG DE LINUX PARA EL ARRANQUE" 
+echo -e '\033[1;92m' >> "\n\tCONFIRME TENER LA CARPETA DE GRUB PARA EL ARRANQUE" 
+sleep 4
+
+else
+
+clear
+arch-chroot /mnt /bin/bash -c "pacman -S grub os-prober --noconfirm"
+echo '' 
+arch-chroot /mnt /bin/bash -c "grub-install --target=i386-pc $disco"
+######
+sed -i "6iGRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"" /mnt/etc/default/grub
+sed -i '7d' /mnt/etc/default/grub
+######
+echo ''
+arch-chroot /mnt /bin/bash -c "grub-mkconfig -o /boot/grub/grub.cfg"
+echo '' 
+echo 'ls -l /mnt/boot' 
+ls -l /mnt/boot 
+echo '' 
+echo -e '\033[1;92m' >> "\n\tLEA BIEN QUE NO TENGA NINGÚN ERROR MARCADO" 
+echo -e '\033[1;92m' >> "\n\tCONFIRME TENER LAS IMG DE LINUX PARA EL ARRANQUE" 
+echo -e '\033[1;92m' >> "\n\tCONFIRME TENER LA CARPETA DE GRUB PARA EL ARRANQUE" 
+
+fi
+
+clear
+
+echo -e '\033[1;92m' "\n\tINSTALANDO PROGRAMAS PARA ETHERNET"
+
+arch-chroot /mnt /bin/bash -c "pacman -S dhcpcd networkmanager iwd net-tools ifplugd --noconfirm"
+arch-chroot /mnt /bin/bash -c "systemctl enable dhcpcd NetworkManager"
+echo "noipv6rs" >> /mnt/etc/dhcpcd.conf
+echo "noipv6" >> /mnt/etc/dhcpcd.conf
+clear
+
+# WIFI
+#arch-chroot /mnt /bin/bash -c "pacman -S iw wireless_tools wpa_supplicant dialog wireless-regdb --noconfirm"
+
+# BLUUTUUU
+#arch-chroot /mnt /bin/bash -c "pacman -S bluez bluez-utils pulseaudio-bluetooth"
+
+echo -e '\033[1;92m' "\n\tCAMBIANDO BASH POR NUESTRA SHELL PREFERIDA"
+
+arch-chroot /mnt /bin/bash -c "pacman -S zsh zsh-completions zsh-syntax-highlighting zsh-autosuggestions --noconfirm"
+SH=zsh
+arch-chroot /mnt /bin/bash -c "chsh -s /bin/$SH"
+arch-chroot /mnt /bin/bash -c "chsh -s /usr/bin/$SH $user"
+arch-chroot /mnt /bin/bash -c "chsh -s /bin/$SH $user"
+clear
+
+echo -e '\033[1;92m' "\\n\tINSTALANDO GIT WGET NEOFETCH LSB-RELEASE"
+
+arch-chroot /mnt /bin/bash -c "pacman -S git wget neofetch lsb-release --noconfirm"
+echo ""
+arch-chroot /mnt /bin/bash -c "ls /home/$user"
+sleep 5
+clear
+
+echo -e '\033[1;92m' "\n\tDRIVER DE VÍDEO AUTOMATICO SOLO DRIVER LIBRES"
+
+if (lspci | grep VGA | grep "NVIDIA\|nVidia" &>/dev/null); then
+
+#NVIDIA
+arch-chroot /mnt /bin/bash -c "pacman -S xf86-video-nouveau mesa lib32-mesa mesa-vdpau libva-mesa-driver lib32-mesa-vdpau lib32-libva-mesa-driver libva-vdpau-driver libvdpau-va-gl libva-utils vdpauinfo libvdpau lib32-libvdpau opencl-mesa clinfo ocl-icd lib32-ocl-icd opencl-headers --noconfirm"
+
+elif (lspci | grep VGA | grep "Radeon R\|R2/R3/R4/R5" &>/dev/null); then
+
+# RADEON  
+arch-chroot /mnt /bin/bash -c "pacman -S xf86-video-amdgpu mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon mesa-vdpau libva-mesa-driver lib32-mesa-vdpau lib32-libva-mesa-driver libva-vdpau-driver libvdpau-va-gl libva-utils vdpauinfo opencl-mesa clinfo ocl-icd lib32-ocl-icd opencl-headers --noconfirm"
+
+elif (lspci | grep VGA | grep "ATI\|AMD/ATI" &>/dev/null); then
+
+# ATI             
+arch-chroot /mnt /bin/bash -c "pacman -S xf86-video-ati mesa lib32-mesa mesa-vdpau libva-mesa-driver lib32-mesa-vdpau lib32-libva-mesa-driver libva-vdpau-driver libvdpau-va-gl libva-utils vdpauinfo opencl-mesa clinfo ocl-icd lib32-ocl-icd opencl-headers --noconfirm"
+
+elif (lspci | grep VGA | grep "Intel" &>/dev/null); then
+
+# INTEL       
+arch-chroot /mnt /bin/bash -c "pacman -S xf86-video-intel vulkan-intel mesa lib32-mesa intel-media-driver libva-intel-driver libva-vdpau-driver libvdpau-va-gl libva-utils vdpauinfo intel-compute-runtime beignet clinfo ocl-icd lib32-ocl-icd opencl-headers --noconfirm"
+    
+else
+
+# GENERICO   
+arch-chroot /mnt /bin/bash -c "pacman -S xf86-video-vesa xf86-video-fbdev mesa mesa-libgl lib32-mesa --noconfirm"
+
+fi
+
+clear
+
+
+echo -e '\033[1;92m' "\n\tESCRITORIO SELECCIONADO"
+
+case $escritorio in
+  1)
+    echo "Escritorio : Terminal Virtual (TTY)"
+      sleep 3
+    clear
+  ;;
+
+  2)
+    echo "Escritorio : Xfce4"
+    sleep 3
+
+    # INSTALA XORG
+	arch-chroot /mnt /bin/bash -c "pacman -S xorg xorg-apps xorg-xinit xorg-twm xterm xorg-xclock --noconfirm"
+
+    # PROGRAMAS DE XFCE4
+    arch-chroot /mnt /bin/bash -c "pacman -S xfce4 xfce4-goodies network-manager-applet ffmpegthumbs ffmpegthumbnailer --noconfirm"
+	
+	# PROGRAMAS PARA LOGIN
+	arch-chroot /mnt /bin/bash -c "pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings light-locker accountsservice --noconfirm"
+	arch-chroot /mnt /bin/bash -c "systemctl enable lightdm"
+
+	# ESTABLECER FORMATO DE TECLADO DENTRO DE XORG
+	keymap="latam"
+	# AQUI PODEMOS PONERLO EN " latam - es - us " 
+	# ALGÚN OTRO IDIOMA QUE QUEREMOS PARA NUESTRO TECLADO MI CASO ES : latam
+
+	touch /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'Section "InputClass"' > /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'Identifier "system-keyboard"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'MatchIsKeyboard "on"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'Option "XkbLayout" "latam"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'EndSection' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo ""
+	cat /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	sleep 5
+	clear
+
+	# FORMATOS DE LECTURA DE TODO TIPO DE DISCOS INCLUIDO ANDROID
+	#arch-chroot /mnt /bin/bash -c "pacman -S android-file-transfer android-tools android-udev msmtp libmtp libcddb gvfs gvfs-afc gvfs-smb gvfs-gphoto2 gvfs-mtp gvfs-goa gvfs-nfs gvfs-google dosfstools jfsutils f2fs-tools btrfs-progs exfat-utils ntfs-3g reiserfsprogs udftools xfsprogs nilfs-utils polkit gpart mtools --noconfirm"
+
+	# AUDIO
+	arch-chroot /mnt /bin/bash -c "pacman -S pulseaudio --noconfirm"
+	clear
+
+	# FONTS
+	arch-chroot /mnt /bin/bash -c "pacman -S gnu-free-fonts ttf-hack ttf-inconsolata gnome-font-viewer --noconfirm"
+	clear
+
+	# NAVEGADOR WEB
+	arch-chroot /mnt /bin/bash -c "pacman -S firefox chromium --noconfirm"
+	clear
+  ;;
+
+  3)
+    echo "Escritorio : Kde Plasma"
+    sleep 3
+
+    # INSTALA XORG
+	arch-chroot /mnt /bin/bash -c "pacman -S xorg xorg-apps xorg-xinit xorg-twm xterm xorg-xclock --noconfirm"
+
+    # PROGRAMAS PARA KDE PLASMA MINIMALISTA
+    arch-chroot /mnt /bin/bash -c "pacman -S plasma dolphin konsole discover sddm ffmpegthumbs ffmpegthumbnailer --noconfirm"
+    arch-chroot /mnt /bin/bash -c "systemctl enable sddm"
+
+    # ESTABLECER FORMATO DE TECLADO DENTRO DE XORG
+	keymap="latam"
+	# AQUI PODEMOS PONERLO EN " latam - es - us " 
+	# ALGÚN OTRO IDIOMA QUE QUEREMOS PARA NUESTRO TECLADO MI CASO ES : latam
+
+	touch /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'Section "InputClass"' > /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'Identifier "system-keyboard"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'MatchIsKeyboard "on"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'Option "XkbLayout" "latam"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'EndSection' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo ""
+	cat /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	sleep 5
+	clear
+
+	# FORMATOS DE LECTURA DE TODO TIPO DE DISCOS INCLUIDO ANDROID
+	#arch-chroot /mnt /bin/bash -c "pacman -S android-file-transfer android-tools android-udev msmtp libmtp libcddb gvfs gvfs-afc gvfs-smb gvfs-gphoto2 gvfs-mtp gvfs-goa gvfs-nfs gvfs-google dosfstools jfsutils f2fs-tools btrfs-progs exfat-utils ntfs-3g reiserfsprogs udftools xfsprogs nilfs-utils polkit gpart mtools --noconfirm"
+
+	# AUDIO
+	arch-chroot /mnt /bin/bash -c "pacman -S pulseaudio --noconfirm"
+	clear
+
+	# FONTS
+	arch-chroot /mnt /bin/bash -c "pacman -S gnu-free-fonts ttf-hack ttf-inconsolata gnome-font-viewer --noconfirm"
+	clear
+
+	# NAVEGADOR WEB
+	arch-chroot /mnt /bin/bash -c "pacman -S firefox chromium --noconfirm"
+	clear
+  ;;
+
+  4)
+    echo "Escritorio : Gnome 40"
+    sleep 3
+
+    # INSTALA XORG
+	arch-chroot /mnt /bin/bash -c "pacman -S xorg xorg-apps xorg-xinit xorg-twm xterm xorg-xclock --noconfirm"
+
+    # PROGRAMAS PARA GNOME MINIMALISTA
+    arch-chroot /mnt /bin/bash -c "pacman -S gnome-shell gdm gnome-control-center gnome-tweaks gnome-terminal nautilus --noconfirm"
+    arch-chroot /mnt /bin/bash -c "systemctl enable gdm"
+
+    # ESTABLECER FORMATO DE TECLADO DENTRO DE XORG
+	keymap="latam"
+	# AQUI PODEMOS PONERLO EN " latam - es - us " 
+	# ALGÚN OTRO IDIOMA QUE QUEREMOS PARA NUESTRO TECLADO MI CASO ES : latam
+
+	touch /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'Section "InputClass"' > /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'Identifier "system-keyboard"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'MatchIsKeyboard "on"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'Option "XkbLayout" "latam"' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo -e 'EndSection' >> /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	echo ""
+	cat /mnt/etc/X11/xorg.conf.d/00-keyboard.conf
+	sleep 5
+	clear
+
+	# FORMATOS DE LECTURA DE TODO TIPO DE DISCOS INCLUIDO ANDROID
+	#arch-chroot /mnt /bin/bash -c "pacman -S android-file-transfer android-tools android-udev msmtp libmtp libcddb gvfs gvfs-afc gvfs-smb gvfs-gphoto2 gvfs-mtp gvfs-goa gvfs-nfs gvfs-google dosfstools jfsutils f2fs-tools btrfs-progs exfat-utils ntfs-3g reiserfsprogs udftools xfsprogs nilfs-utils polkit gpart mtools --noconfirm"
+
+	# AUDIO
+	arch-chroot /mnt /bin/bash -c "pacman -S pulseaudio --noconfirm"
+	clear
+
+
+	# FONTS
+	arch-chroot /mnt /bin/bash -c "pacman -S gnu-free-fonts ttf-hack ttf-inconsolata gnome-font-viewer --noconfirm"
+	clear
+
+
+	# NAVEGADOR WEB
+	arch-chroot /mnt /bin/bash -c "pacman -S firefox chromium --noconfirm"
+	clear
+  ;;
+
+  *)
+    arch-chroot /mnt /bin/bash -c "pacman -Syu --noconfirm"
+    clear
+  ;;
+esac
+
+echo -e '\033[1;92m' "\n\tDESMONTANDO PARTICIONES Y REINICIANDO EL SISTEMA....."
+
+sleep 2
+
+umount -R /mnt
+
+reboot
+
+#
+# METODO DE DISCO PARA UEFI - BOOT - ROOT - HOME - SWAP 
+#
+	#+100M 			tamaño particion boot
+	#+${swapsize}G  tamaño particion swap
+	#+20G			tamaño particion root
+	#0				tamaño partición home
+	#				Cambien valores si desean
+#
+#	swapsize=$(free --giga | awk '/^Mem:/{print $2}')
+#
+#	dd if=/dev/zero of="${disco}" bs=100M count=10 status=progress
+#	parted ${disco} mklabel gpt
+#	sgdisk ${disco} -n=1:0:+100M -t=1:ef00
+#	sgdisk ${disco} -n=2:0:+${swapsize}G -t=2:8200
+#	sgdisk ${disco} -n=3:0:+20G -t=3:8300
+#	sgdisk ${disco} -n=4:0:0
+#	fdisk -l ${disco} > /tmp/partition
+#	echo ""
+#	echo ""
+#	cat /tmp/partition
+#	sleep 3
+#
+#	partition="$(cat /tmp/partition | grep /dev/ | awk '{if (NR!=1) {print}}' | sed 's/*//g' | awk -F ' ' '{print $1}')"
+#
+#	echo $partition | awk -F ' ' '{print $1}' >  boot-efi
+#	echo $partition | awk -F ' ' '{print $2}' >  swap-efi
+#	echo $partition | awk -F ' ' '{print $3}' >  root-efi
+#	echo $partition | awk -F ' ' '{print $4}' >  home-efi
+#
+#	clear
+#	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+#	echo ""
+#	echo "Partición EFI es:" 
+#	cat boot-efi
+#	echo ""
+#	echo "Partición SWAP es:"
+#	cat swap-efi
+#	echo ""
+#	echo "Partición ROOT es:"
+#	cat root-efi
+#	echo ""
+#	echo "Partición HOME es:"
+#	cat home-efi
+#	sleep 4
+#
+#	clear
+#	echo ""
+#	echo "Formateando Particiones"
+#	echo ""
+#	mkfs.ext4 $(cat root-efi) 
+#	mount $(cat root-efi) /mnt 
+#
+#	mkdir -p /mnt/home
+#	mkfs.ext4 $(cat home-efi) 
+#	mount $(cat home-efi) /mnt/home
+#
+#	mkdir -p /mnt/efi 
+#	mkfs.fat -F 32 $(cat boot-efi) 
+#	mount $(cat boot-efi) /mnt/efi 
+#
+#	mkswap $(cat swap-efi) 
+#	swapon $(cat swap-efi)
+#
+#	clear
+#	echo ""
+#	echo "Revise en punto de montaje en MOUNTPOINT"
+#	echo ""
+#	lsblk -l
+#	sleep 3
+#	clear
+
+#########################################################
+# METODO DE DISCO PARA BIOS - BOOT - ROOT - HOME - SWAP 
+#
+	#+100M 			particion boot
+	#+${swapsize}G	particion swap
+	#+20G			particion root
+	#0				partición home 100%
+#	Cambien valores si desean
+#
+#	swapsize=$(free --giga | awk '/^Mem:/{print $2}')
+#
+#	dd if=/dev/zero of="${disco}" bs=100M count=10 status=progress
+#	(echo o; echo n; echo p; echo 1; echo ""; echo +100M; echo n; echo p; echo 2; echo ""; echo +${swapsize}G; echo n; echo p; echo 3; echo ""; echo +20G; echo n; echo p; echo 4; echo ""; echo ""; echo t; echo 2; echo 82; echo a; echo 1; echo w; echo q) | fdisk ${disco}
+#	fdisk -l ${disco} > /tmp/partition 
+#	cat /tmp/partition
+#	sleep 3
+#
+#	partition="$(cat /tmp/partition | grep /dev/ | awk '{if (NR!=1) {print}}' | sed 's/*//g' | awk -F ' ' '{print $1}')"
+#
+#	echo $partition | awk -F ' ' '{print $1}' >  boot-bios
+#	echo $partition | awk -F ' ' '{print $2}' >  swap-bios
+#	echo $partition | awk -F ' ' '{print $3}' >  root-bios
+#	echo $partition | awk -F ' ' '{print $4}' >  home-bios
+#
+#	clear
+#	printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' _
+#	echo ""
+#	echo "Partición BOOT es:" 
+#	cat boot-bios
+#	echo ""
+#	echo "Partición SWAP es:"
+#	cat swap-bios
+#	echo ""
+#	echo "Partición HOME es:"
+#	cat home-bios
+#	echo ""
+#	echo "Partición ROOT es:"
+#	cat root-bios
+#	sleep 3
+#
+#	clear
+#	echo ""
+#	echo "Formateando Particiones"
+#	echo ""
+#	mkfs.ext4 $(cat root-bios) 
+#	mount $(cat root-bios) /mnt 
+#
+#	mkdir -p /mnt/boot
+#	mkfs.ext4 $(cat boot-bios) 
+#	mount $(cat boot-bios) /mnt/boot
+#
+#	mkdir -p /mnt/home
+#	mkfs.ext4 $(cat home-bios) 
+#	mount $(cat home-bios) /mnt/home
+#
+#	mkswap $(cat swap-bios) 
+#	swapon $(cat swap-bios)
+#
+#	clear
+#	echo ""
+#	echo "Revise en punto de montaje en MOUNTPOINT"
+#	echo ""
+#	lsblk -l
+#	sleep 4
+#	clear

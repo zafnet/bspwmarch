@@ -6,11 +6,11 @@ Xft.autohint: true
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
 
+###TERMINAL XTERM Y SUS VALORES
 XTerm.termName: xterm-256color
-
 XTerm*Background: #272828
 XTerm*Foreground: #7FFECE
-XTerm*font: 9X15 Terminus
+XTerm*font: 9X15 Hack Nerd Font
 XTerm*saveLines: 1000
 XTerm*HiForeColor: #1e35c9
 XTerm*HiBackColor: #e76cf5
@@ -21,4 +21,6 @@ XTerm.vt100.faceName: Hack Nerd Font: size = 10: antialias = false
 XTerm.vt100.font: 7x13
 XTerm*utf8: 2
 XTerm*locale: true
-XTerm.vt100.faceSize: 13
+XTerm.vt100.faceSize: 11
+XTerm*cursorUnderLine: true
+XTerm*cursorBlink:true

@@ -1,0 +1,281 @@
+# ! /bin/bash/
+##################################################################################
+# PARA ACTUALIZAR ARCH LINUX CON BSPWM E INSTALAR LOS  A CONTINUACION INDICADOS
+if [ "$(id -u)" == "0" ]; then
+
+pacman -Syu -y --noconfirm
+
+else 
+
+echo  ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "
+echo  "> ███╗░░██╗░█████╗░  ██████╗░░█████╗░░█████╗░████████╗  < " 
+echo  "> ████╗░██║██╔══██╗  ██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝  < "
+echo  "> ██╔██╗██║██║░░██║  ██████╔╝██║░░██║██║░░██║░░░██║░░░  < "
+echo  "> ██║╚████║██║░░██║  ██╔══██╗██║░░██║██║░░██║░░░██║░░░  < "
+echo  "> ██║░╚███║╚█████╔╝  ██║░░██║╚█████╔╝╚█████╔╝░░░██║░░░  < "
+echo  "> ╚═╝░░╚══╝░╚════╝░  ╚═╝░░╚═╝░╚════╝░░╚════╝░░░░╚═╝░░░  < "
+echo  ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> "
+
+sleep 1
+
+clear
+
+exit
+
+fi
+
+echo -e '\033[1;92m' "\n\tINSTALANDO REFLECTOR......"
+
+pacman -S reflector -y --noconfirm
+
+clear
+
+echo -e '\033[1;92m' "\n\tBUSCANDO MIRRORS MAS RAPIDOS...."
+
+reflector --verbose --latest 5 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+clear
+
+echo -e '\033[1;92m' "\n\tACTUALIZANDO SISTEMA...."
+
+pacman -Syu -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO PROGRAMA...."
+
+echo -e '\033[1;92m' "\n\tINSTALANDO XCLIP...."
+pacman -S xclip -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO GVFS...."
+pacman -S gvfs  -y --noconfirm
+
+#echo -e '\033[1;92m' "\n\tINSTALANDO NMAP...." 
+#pacman -S nmap -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO TILIX...." 
+pacman -S tilix -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO NEOVIM...."
+pacman -S neovim -y --noconfirm 
+
+echo -e '\033[1;92m' "\n\tINSTALANDO TMUX...."
+pacman -S tmux -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO PULSEAUDIO ...."
+pacman -S pulseaudio -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO XORG...." 
+pacman -S xorg -y --noconfirm
+
+#echo -e '\033[1;92m' "\n\tINSTALANDO XTERM...." 
+#pacman -S xterm -y --noconfirm
+
+# echo -e '\033[1;92m' "\n\tINSTALANDO XDG-USER-DIRS...."
+#pacman -S xdg-user-dirs -y --noconfirm
+
+#xdg-user-dirs-update
+
+#echo -e '\033[1;92m' "\n\tINSTALANDO ZSH...." 
+#pacman -S zsh -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO LSD...." 
+pacman -S lsd -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO CHROMIUM...." 
+pacman -S chromium -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO FIREFOX...." 
+pacman -S firefox -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO TELEGRAM...." 
+pacman -S telegram-desktop -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO DISCORD...." 
+pacman -S discord -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO ROFI...." 
+pacman -S rofi -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO BSPWM...." 
+pacman -S bspwm -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO SXHKD...." 
+pacman -S sxhkd -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO LIGHTDM...." 
+pacman -S lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings -y --noconfirm
+ 
+systemctl enable lightdm.service
+
+echo -e '\033[1;92m' "\n\tINSTALANDO PICOM...." 
+pacman -S picom -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO PCMANFM...." 
+pacman -S pcmanfm -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO LXAPPEARANCE...." 
+pacman -S lxappearance  -y --noconfirm
+
+#echo -e '\033[1;92m' "\n\tINSTALANDO NEOFETCH...." 
+#pacman -S neofetch -y --noconfirm
+
+#echo -e '\033[1;92m' "\n\tINSTALANDO OS-PROBER...."
+#pacman -S os-prober -y --noconfirm 
+
+echo -e '\033[1;92m' "\n\tINSTALANDO ZATHURA...."
+pacman -S zathura -y --noconfirm
+
+pacman -S zathura-pdf-poppler -y --noconfirm
+
+#echo -e '\033[1;92m' "\n\tINSTALANDO ZSH-AUTOSUGGESTIONS ...." 
+#pacman -S zsh-autosuggestions -y --noconfirm
+
+#echo -e '\033[1;92m' "\n\tINSTALANDO ZSH-SYNTAX-HIGHLIGHTING...." 
+#pacman -S zsh-syntax-highlighting -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO FEH...." 
+pacman -S feh  -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO XED...." 
+pacman -S xed -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO RANGER...." 
+pacman -S ranger -y --noconfirm
+ 
+echo -e '\033[1;92m' "\n\tINSTALANDO HTOP...."
+pacman -S htop -y --noconfirm
+
+echo -e '\033[1;92m' "\n\tINSTALANDO ARK...."
+pacman -S ark -y --noconfirm
+
+#COPIANDO PLUGINS DE ZSH A /USR/SHARE/
+
+echo -e '\033[1;92m' "\n\tCOPIANDO PLUGINS DE ZSH A /USR/SHARE/...."
+
+cp -r /usr/share/zsh/plugins/zsh-syntax-highlighting/ /usr/share/
+ 
+cp -r /usr/share/zsh/plugins/zsh-autosuggestions/ /usr/share/
+
+###################################################################################
+# PARA REMOVER Y AGREGAR DOTFILES MIOS A SUS CARPETAS CORRESPONDIENTES
+
+echo -e '\033[1;92m' "\n\tAGREGANDO DOTFILES A SUS CARPETAS CORRESPONDIENTES...."
+
+############################## TENGO QUE PROBAR SACANDO EL USUARIO Y PONERLE LA VARIABLE DE ENTORNO $USER######################################
+cp    /home/$USER/bspwmarch/.tmux.conf  /home/$USER/
+cp    /home/$USER/bspwmarch/.tmux.conf.local  /home/$USER/
+cp -r /home/$USER/bspwmarch/.oh-my-zsh/ /home/$USER/
+cp -r /home/$USER/bspwmarch/Infinity-Lavender-Dark-Icons/ /usr/share/icons/
+cp -r /home/$USER/bspwmarch/Lavender-Breeze-GTK/ /usr/share/themes/
+cp -r /home/$USER/bspwmarch/.wallpapers/ /home/$USER/
+cp -r /home/$USER/bspwmarch/tilix/ /usr/share/
+cp -r /home/$USER/bspwmarch/rofi/  /home/$USER/.config/
+cp  /home/$USER/bspwmarch/.zshrc /home/$USER/
+cp  /home/$USER/bspwmarch/.p10k.zsh  /home/$USER/
+cp  /home/$USER/bspwmarch/.bashrc  /home/$USER/
+cp  /home/$USER/bspwmarch/.Xresources  /home/$USER/
+cp -r /home/$USER/bspwmarch/nvim/  /home/$USER/.config/
+cp  /home/$USER/bspwmarch/.nanorc /home/$USER/.nanorc
+#######################################################################################################################
+##COPIA CARPETAS DE BSPWM,PICOM Y SXHKD EN .CONFIG EN VEZ DE CREARLAS
+
+echo -e '\033[1;92m' "\n\tCOPIANDO CARPETAS DE BSPWM,PICOM Y SXHKD EN .CONFIG...."
+  
+cp -r /home/$USER/bspwmarch/bspwm/ /home/$USER/.config/
+chmod +x /home/$USER/.config/bspwm/bspwmrc
+cp -r /home/$USER/bspwmarch/sxhkd/ /home/$USER/.config/
+chmod +x /home/$USER/.config/sxhkd/sxhkdrc
+cp -r /home/$USER/bspwmarch/picom/  /home/$USER/.config/
+chmod +x /home/$USER/.config/picom/picom.conf
+cp -r /home/$USER/bspwmarch/polybar/  /home/$USER/.config/
+chmod +x /home/$USER/.config/polybar/config
+chmod +x /home/$USER/.config/polybar/launch.sh
+
+##############################################################################
+# PARA AGREGAR FONTS
+echo -e '\033[1;92m' "\n\tCOPIANDO CARPETA FONTS A /USR/SHARE/....."
+
+cp -r /home/$USER/bspwmarch/fonts/ /usr/share/
+###############################################################################
+
+###ENLACES SIMBOLICOS###########################################
+
+echo -e '\033[1;92m' "\n\tCREANDO ENLACES SIMBOLICOS....."
+
+cd 
+ 
+ln -s -f /home/$USER/.zshrc .zshrc
+ 
+ln -s -f /home/$USER/.tmux.conf.local .tmux.conf.local
+ 
+ln -s -f /home/$USER/.tmux.conf .tmux.conf
+ 
+ln -s -f /home/$USER/.p10k.zsh .p10k.zsh
+ 
+ln -s -f /home/$USER/.nanorc .nanorc
+ 
+cp -r /home/$USER/bspwmarch/.oh-my-zsh/ . 
+ 
+cp  /home/$USER/bspwmarch/.bashrcroot .
+
+mv .bashrcroot .bashrc
+######################################################################### 
+
+#PARA INSTALAR QEMU
+#echo -e '\033[1;92m' "\n\tINSTALANDO QEMU....."
+ 
+#pacman -S qemu qemu-guest-agent qemu-arch-extra qemu-block-gluster qemu-block-iscsi qemu-block-rbd samba -y --noconfirm
+#############################################################################################################################
+#echo -e '\033[1;92m' "\n\tACTIVAMOS EL SERVICIO PARA  GUEST....."
+
+#systemctl enable qemu-ga 
+ 
+#systemctl start qemu-ga 
+#######################################################################################################################
+#echo -e '\033[1;92m' "\n\tINSTALANDO KVM QEMU VIRT-MANAGER Y OTROS....."
+ 
+#pacman -S virt-viewer virt-manager libvirt ebtables dnsmasq bridge-utils openbsd-netcat -y --noconfirm
+#########################################################################################################################
+#echo -e '\033[1;92m' "\n\tHABILITAMOS Y ACTIVAMOS SEVICIOS KVM....."
+ 
+#systemctl enable libvirtd virtlogd
+
+#systemctl start libvirtd virtlogd
+
+#systemctl enable virtlogd.socket
+
+#systemctl start virtlogd.socket
+
+#systemctl enable virtlockd.socket
+
+#systemctl start virtlockd.socket
+#############################################################################################################################
+#echo -e '\033[1;92m' "\n\tHABILITAMOS Y ACTIVAMOS MONITOR SPICE....."
+
+#pacman -S spice spice-gtk spice-vdagent xf86-video-qxl -y --noconfirm
+ 
+#systemctl enable spice-vdagentd
+ 
+#systemctl start spice-vdagentd
+###############################################################################################################################
+#echo -e '\033[1;92m' "\n\tINSTALAMOS OVMF PARA PODER USAR UEFI EN QEMU....." 
+
+#pacman -S ovmf -y --noconfirm
+
+echo -e '\033[1;92m' "\n\t\t\t\t\tREINICIANDO EL PC"
+
+sleep 2
+
+reboot
+
+############################################# 
+#echo -e "\n\DEFINIR CONEXION NAT....\n\t"
+ 
+#virsh net-define /etc/libvirt/qemu/networks/default.xml
+ 
+#echo -e "\n\QUE INICIE AUTOMATICO CONEXION NAT EN QEMU....\n\t"
+ 
+#virsh net-autostart default 
+ 
+#echo -e "\n\ACTIVAR NAT EN QEMU....\n\t"
+ 
+#virsh net-start default

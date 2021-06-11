@@ -109,20 +109,6 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 
-#UTILIDAD EXTRACTPORT
-
-# Extract nmap information
-function extractPorts(){
-	ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
-	ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)"
-	echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
-	echo -e "\t[*] IP Address: $ip_address"  >> extractPorts.tmp
-	echo -e "\t[*] Open ports: $ports\n"  >> extractPorts.tmp
-	echo $ports | tr -d '\n' | xclip -sel clip
-	echo -e "[*] Ports copied to clipboard\n"  >> extractPorts.tmp
-	cat extractPorts.tmp; rm extractPorts.tmp
-}
-
 # MANTENGA 1000 LÍNEAS DE HISTORIAL DENTRO DEL SHELL Y GUÁRDELO EN ~ / .ZSH_HISTORY:
 
 HISTSIZE=1000
@@ -179,21 +165,16 @@ function man() {
     man "$@"
 }
 
-function mkt(){
-	mkdir {nmap,content,exploits,scripts}
-}
-
-#######################################################################################
-
 #########COMIENZO DE ALIAS##############################################   
 
 ###### ALIAS MANUALES #########################
 
 alias ll='ls -lha --group-dirs=first'
 alias ls='lsd --group-dirs=first'
-#alias cat='bat'
-#alias =' --group-dirs=first'
-#alias l=' --group-dirs=first'
+alias nv='nvim'
+alias can='bat'
+alias mk='mkdir'
+alias smk='sudo mkdir'
 #alias =' --group-dirs=first'
 
 ##############################################
@@ -222,45 +203,23 @@ alias grep='grep --color=auto'
 ######################## PACMAN Y YAY #############################
 
 alias inst='sudo pacman -S'   
-alias  upda='sudo pacman -Syu' 
+alias  actu='sudo pacman -Syu' 
 #alias yaysua="yay -Sua --noconfirm"
-#alias yaysyu="yay -Syu --noconfirm"  
+#alias yasy="yay -Syu --noconfirm"  
 
 ################ OBTENER REPOS MÁS RÁPIDOS ############################################
 
-alias mirror="sudo reflector --latest 20  --sort rate --save /etc/pacman.d/mirrorlist"
+alias mirror="sudo reflector --latest 5  --sort rate --save /etc/pacman.d/mirrorlist"
 
 
 ###################################### PLUGINS DE ZSH ###################################
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-############## ESTOS SON COMO COLORES PARA TMUX EN LA TTY PERO SALEN COMO CLAROS LOS COLORES ###############
-# if [ "$TERM" = "linux" ]; then
-#    echo -en "\e]P0343742" #black
-#    echo -en "\e]P1F5958B" #darkred
-#    echo -en "\e]P2B7E48C" #darkgreen
-#    echo -en "\e]P3FFFFB9" #brown
-#    echo -en "\e]P47EB6FF" #darkblue
-#    echo -en "\e]P5C5C8C6" #darkmagenta
-#    echo -en "\e]P6C2EFFF" #darkcyan
-#    echo -en "\e]P7DDDDDD" #lightgrey
-#    echo -en "\e]P8CCCCCC" #darkgrey
-#    echo -en "\e]P9FF8D80" #red
-#   echo -en "\e]PADBFFB3" #green
-#    echo -en "\e]PBFFBE64" #yellow
-#    echo -en "\e]PCA8CEEA" #blue
-#    echo -en "\e]PDE296FF" #magenta
-#    echo -en "\e]PE9CE9FF" #cyan
-#    echo -en "\e]PFEEEEEE" #white
-#    #clear #for background artifacting
-#fi
-############################################################################
-
 ####################### COLORES PARA COMANDO LS ###############################
 
-LS_COLORS='di=32:fi=35:ln=93:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=37:*.rpm=90'
-export LS_COLORS
+#LS_COLORS='di=32:fi=35:ln=93:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=37:*.rpm=90'
+#export LS_COLORS
 ###############################################################################
 
 

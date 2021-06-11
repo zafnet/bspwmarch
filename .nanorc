@@ -27,7 +27,7 @@
 
 ###hace busquedas hacia atras por defecto
 
-set backwards
+#set backwards
 
 ## Realiza una copia de seguridad de los archivos con el nombre de archivo actual más una tilde.
 
@@ -216,7 +216,7 @@ set linenumbers
 
 # set speller "aspell -x -c"
 
-(## Use el final de la barra de título para algunas banderas de estado: I = sangría automática,
+## Use el final de la barra de título para algunas banderas de estado: I = sangría automática,
 ## M = marca, L = líneas largas de envoltura dura, R = grabación, S = envoltura blanda.
 
 ## Use the end of the title bar for some state flags: I = auto-indenting,
