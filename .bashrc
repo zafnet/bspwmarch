@@ -100,7 +100,7 @@ alias mirror="sudo reflector --latest 5  --sort rate --save /etc/pacman.d/mirror
 ########################################################################################3
  
 #config bashrc usuario
-#export PS1="\[\033[38;5;28m\]\u\[$(tput sgr0)\]\[\033[38;5;36m\]@\[$(tput sgr0)\]\[\033[38;5;48m\]\h\[$(tput sgr0)\]\[\033[38;5;13m\]{\[$(tput sgr0)\]\[\033[38;5;43m\]\w\[$(tput sgr0)\]\[\033[38;5;13m\]}\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]"
+export PS1="\[\033[38;5;28m\]\u\[$(tput sgr0)\]\[\033[38;5;36m\]@\[$(tput sgr0)\]\[\033[38;5;48m\]\h\[$(tput sgr0)\]\[\033[38;5;13m\]{\[$(tput sgr0)\]\[\033[38;5;43m\]\w\[$(tput sgr0)\]\[\033[38;5;13m\]}\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]"
   
 #config bashrc ROOT
-export PS1="\[\033[38;5;196m\]\u\[$(tput sgr0)\]\[\033[38;5;226m\]@\[$(tput sgr0)\]\[\033[38;5;5m\]\h\[$(tput sgr0)\]\[\033[38;5;13m\]{\[$(tput sgr0)\]\[\033[38;5;202m\]\w\[$(tput sgr0)\]\[\033[38;5;13m\]}\[$(tput sgr0)\]\[\033[38;5;196m\]\\$\[$(tput sgr0)\]"
+#export PS1="\[\033[38;5;196m\]\u\[$(tput sgr0)\]\[\033[38;5;226m\]@\[$(tput sgr0)\]\[\033[38;5;5m\]\h\[$(tput sgr0)\]\[\033[38;5;13m\]{\[$(tput sgr0)\]\[\033[38;5;202m\]\w\[$(tput sgr0)\]\[\033[38;5;13m\]}\[$(tput sgr0)\]\[\033[38;5;196m\]\\$\[$(tput sgr0)\]"
