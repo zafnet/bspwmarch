@@ -551,12 +551,12 @@ format-connected-background = #3989b6
 ####### DESCONECTADO DE INTERNET
  
 label-disconnected = disconnected 
-#label-disconnected-foreground = #ff0000
+label-disconnected-foreground = #ff0000
 ;format-disconnected =
 format-disconnected-prefix = "  "
 format-disconnected-prefix-foreground = #ff0000
-#format-disconnected-foreground = #fefefe
-#format-disconnected-background = #3989b6
+format-disconnected-foreground = #ff0000
+format-disconnected-background = #3989b6
 #format-disconnected-underline = #55aa55
  
  
