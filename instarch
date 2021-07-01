@@ -30,8 +30,6 @@ sleep 3
 
 echo -e '\033[1;92m' "\n\tACTUALIZANDO SISTEMA DE ISO"
 
-pacman -Syu -y --noconfirm
-
 else
 clear
 echo ""

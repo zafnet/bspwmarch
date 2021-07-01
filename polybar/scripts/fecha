@@ -1,0 +1,4 @@
+#!/bin/bash
+
+fecha=$(date "+%a %b %d %Y %H:%M%p")
+echo "$fecha"

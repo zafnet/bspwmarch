@@ -1,6 +1,6 @@
 # ! /bin/bash/
 ##################################################################################
-# PARA ACTUALIZAR ARCH LINUX CON BSPWM E INSTALAR LOS  A CONTINUACION INDICADOS
+# PARA ACTUALIZAR ARCH LINUX CON BSPWM E INSTALAR LOS PROGRAMAS A CONTINUACION INDICADOS
 if [ "$(id -u)" == "0" ]; then
 
 pacman -Syu -y --noconfirm
@@ -40,7 +40,7 @@ echo -e '\033[1;92m' "\n\tACTUALIZANDO SISTEMA...."
 
 pacman -Syu -y --noconfirm
 
-echo -e '\033[1;92m' "\n\tINSTALANDO PROGRAMA...."
+echo -e '\033[1;92m' "\n\tINSTALANDO PROGRAMAS...."
 
 echo -e '\033[1;92m' "\n\tINSTALANDO XCLIP...."
 pacman -S xclip -y --noconfirm
