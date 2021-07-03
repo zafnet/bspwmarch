@@ -20,12 +20,25 @@ alt + i
 
        chromium -incognito
 
+ctrl + shift + x
+
+        firefox
+
+ctrl + alt + x 
+
+          firefox -private-window
+
 alt + f
 	pcmanfm
 
 
 alt + m
 	telegram-desktop
+
+
+ctrl + super + d
+
+              discord
 
 # Ranger
 
@@ -183,12 +196,16 @@ super + {grave,Tab}
 
 #subir y bajar el Volumen
 
-alt + @F11
-  amixer -D pulse sset Master 5%-
 alt + @F12
-  amixer -D pulse sset Master 5%+
+  pactl set-sink-volume @DEFAULT_SINK@ +1000
+
+
+alt + @F11
+  pactl set-sink-volume @DEFAULT_SINK@ -1000
+
+
 alt + @F10
-  amixer -D pulse set Master 1+ toggle
+  pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 #
 #preseleccionar
