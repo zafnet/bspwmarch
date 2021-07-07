@@ -163,7 +163,7 @@ echo -e '\033[1;92m' "\n\tAGREGANDO DOTFILES A SUS CARPETAS CORRESPONDIENTES....
 ############################## TENGO QUE PROBAR SACANDO EL USUARIO Y PONERLE LA VARIABLE DE ENTORNO $USER######################################
 cp    /home/$USER/bspwmarch/.tmux.conf  /home/$USER/
 cp    /home/$USER/bspwmarch/.tmux.conf.local  /home/$USER/
-cp -r /home/$USER/bspwmarch/.oh-my-zsh/ /home/$USER/
+cp -r /home/$USER/bspwmarch/powerlevel10k/ /home/$USER/
 cp -r /home/$USER/bspwmarch/Infinity-Lavender-Dark-Icons/ /usr/share/icons/
 cp -r /home/$USER/bspwmarch/Lavender-Breeze-GTK/ /usr/share/themes/
 cp -r /home/$USER/bspwmarch/.wallpapers/ /home/$USER/
@@ -213,11 +213,20 @@ ln -s -f /home/$USER/.p10k.zsh .p10k.zsh
  
 ln -s -f /home/$USER/.nanorc .nanorc
  
-cp -r /home/$USER/bspwmarch/.oh-my-zsh/ . 
+cp -r /home/$USER/bspwmarch/powerlevel10k/ . 
  
 cp  /home/$USER/bspwmarch/.bashrcroot .
 
 mv .bashrcroot .bashrc
+
+
+echo -e '\033[1;92m' "\n\t\t\t\t\tREINICIANDO EL PC"
+
+sleep 2
+
+reboot
+
+#ESTO DE ABAJO NO SE SI ESTARA OBSOLETO
 ######################################################################### 
 
 #PARA INSTALAR QEMU
@@ -260,12 +269,6 @@ mv .bashrcroot .bashrc
 #echo -e '\033[1;92m' "\n\tINSTALAMOS OVMF PARA PODER USAR UEFI EN QEMU....." 
 
 #pacman -S ovmf -y --noconfirm
-
-echo -e '\033[1;92m' "\n\t\t\t\t\tREINICIANDO EL PC"
-
-sleep 2
-
-reboot
 
 ############################################# 
 #echo -e "\n\DEFINIR CONEXION NAT....\n\t"
