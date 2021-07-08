@@ -21,7 +21,7 @@ monitor = ${env:MONITOR}
 ;monitor-fallback = HDMI1
 width = 100%
 height = 20
-;offset-x = 1%
+offset-x = 0% 1%
 ;offset-y = 1%
 radius = 0.0
 fixed-center = true
@@ -33,7 +33,7 @@ separator =
 #ESTE DE ABAJO PINTA TODA LA BARRA COMPLETA EN EL BACKGROUND
 #00000000 SI PONGO ESTE ME DEJA LA BARRA IZQUIERDA TRANSPARENTE Y LA DERECHA #CON LAS FLECHAS CON COLOR BIEN
 
-background = #2f2f2f
+background = #222222
  
 # ESTE CAMBIA COLOR EN LA BARRA IZQUIERDA DEL ICONO CREO O  PROBAR QUE ESTA 
 
@@ -58,8 +58,8 @@ border-size = 0
 ;border-bottom-size = 25
 border-color = #00000000
  
-padding-left = 1
-padding-right = 1
+padding-left = 0
+padding-right = 0
  
 module-margin-left = 0
 module-margin-right = 0
@@ -141,7 +141,7 @@ content-foreground = #099a8e
 [module/arrow7]
 ; grey to Blue
 type = custom/text
-content = "%{T%{T2}"
+content = "%{T2}  %{T-}"
 content-font = 2
 content-foreground = #ef891e
 content-background = #ef891e

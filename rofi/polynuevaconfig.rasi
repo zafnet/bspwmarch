@@ -1,0 +1,108 @@
+/**
+ * A floating box version of the paper theme.
+ *
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+* {
+ 
+    background-color: #0b0000;
+/*    border-color: #00ff3a;*/
+    anchor: south;
+    location: south;
+    lines: 10;
+    columns: 4;
+    font: "IBM 3270 Bold 13";
+    sort: true;
+    hide-scrollbar: true;
+    fullscreen: false;
+    
+}
+
+window {
+    transparency: true;
+    background-color: #0b0000;
+    border: 1;
+    padding: 2%;
+    x-offset: 0;
+    y-offset: 0%;
+    width:      100%;
+    padding:    0%;
+    separator-style: "none";
+    columns: 4;
+    show-icons: true;
+}
+mainbox {
+    padding: 0px;
+    border: 0;
+    spacing: 0%;
+   background-color: #0b0000;
+}
+
+
+/* textbox normal {
+   text-color: #06ff3a;
+    padding: 0;
+    border: 0;
+}*/
+
+listview {
+    fixed-height: 0;
+    border: 0px;
+    padding: 0em;
+    reverse: false;
+ 
+}
+
+element {
+    border: 0;
+    padding: 0px;
+    highlight: bold ;
+    /*background-color: ;*/
+    /*text-color: #ff009b;*/
+}
+
+element normal.normal {
+    text-color: #ff009b;
+    background-color: #0b0000;
+}
+
+/*element normal.urgent {
+    text-color: #ff009b;
+    background-color: #0b0000;
+}*/
+
+/*element normal.active {
+    text-color: #ff009b;
+    background-color: #71f28c;
+}*/
+
+element selected.normal {
+    text-color: #ff009b;
+    background-color:#ffdb8e;
+}
+
+/*element selected.urgent {
+    text-color: #deff00;
+    background-color: #deff00;
+}*/
+
+/*element selected.active {
+    text-color: #ff009b;
+    background-color: #0b0000;
+}*/
+
+element alternate.normal {
+    text-color: #ff009b;
+   background-color: #0b0000;
+}
+
+/*element alternate.urgent {
+    text-color: #D75F00FF;
+    background-color: #71f28c;
+}*/
+
+/*element alternate.active {
+    text-color: #005F87FF;
+    background-color: #0b0000;
+}*/

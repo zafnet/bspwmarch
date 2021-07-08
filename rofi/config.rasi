@@ -1,16 +1,16 @@
 configuration {
-/*  modi: "window,run,ssh";*/
+    modi: "window,run,ssh,file-browser";
     width: 100;
     lines: 10;
     columns: 4;
     font: "IBM 3270 Bold 13";
 /*  bw: 1;*/
-    location: 0;
+/*    location: 0;*/
     padding: 3;
 /*  yoffset: 0;*/
 /*  xoffset: 0;*/
 /*  fixed-num-lines: true;*/
-    show-icons: true;
+   show-icons: true;
 /*  terminal: "rofi-sensible-terminal";*/
 /*  ssh-client: "ssh";*/
 /*  ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -34,7 +34,7 @@ configuration {
 /*  auto-select: false;*/
 /*  parse-hosts: false;*/
 /*  parse-known-hosts: true;*/
-/*  combi-modi: "window,run";*/
+   combi-modi: "drun,run";
 /*  matching: "regex";*/
 /*  tokenize: true;*/
 /*  m: "-5";*/
@@ -44,20 +44,15 @@ configuration {
     separator-style: "none";
     hide-scrollbar: true;
     fullscreen: false;
-/*  fake-transparency: false;*/
+   fake-transparency: true;
 /*  dpi: -1;*/
 /*  threads: 0;*/
-/*  scrollbar-width: 8;*/
 /*  scroll-method: 0;*/
 /*  fake-background: "screenshot";*/
 /*  window-format: "{w}    {c}   {t}";*/
 /*  click-to-exit: true;*/
 /*  show-match: true;*/
 /*  theme: ;*/
-/*  color-normal: ;*/
-/*  color-urgent: ;*/
-/*  color-active: ;*/
-/*  color-window: ;*/
 /*  max-history-size: 25;*/
 /*  combi-hide-mode-prefix: false;*/
 /*  matching-negate-char: '-' /* unsupported */;*/
@@ -143,43 +138,134 @@ configuration {
 /*  me-accept-entry: "MouseDPrimary";*/
 /*  me-accept-custom: "Control+MouseDPrimary";*/
 }
- 
-/*COLOR DE FONDO*/
- 
+
 * {
-    background-color: #0b0000;
-    border-color:     #ff2100;
-    text-color:       #ff009b;
-/*  font:            "IBM 3270 Bold 13";*/
-}
  
-window {
-/*    anchor:     south;*/
-    location:   south;
-/*    width:      100%;*/
-/*    padding:    4px;*/
+    background-color: #0b0000;
+    /*border-color: #ff2100;*/
+    anchor: south;
+    location: south;
+    lines: 10;
+    columns: 4;
+    font: "IBM 3270 Bold 13";
+    sort: true;
+    hide-scrollbar: true;
+    fullscreen: false;
     
 }
- 
-/*horibox {
-    orientation: horizontal;
-    children:   [ prompt, entry, listview ];
-}*/
- 
-/*listview {
-    layout:     horizontal;
-    spacing:    5px;
-    lines:      100;
-}*/
- 
-entry {
-    expand:     false;
-    width:      10em;
+
+inputbar {
+    spacing: 0;
+    background-color: #0b0000;
+    padding: 1px 1px 1px 1px;
+    background-color: #c6ff00;
+    color: @black;
+    end: false;
 }
- 
+
+inputbar {
+    spacing: 10;
+    background-color: #0b0000;
+    border: 0px 0px 0px 0px;
+    border-radius: 0px;
+    padding: 5px 10px 5px 35px;
+    color: @black;
+    end: false;
+}
+
+window {
+    transparency: true;
+    border-radius: 10px;
+    background-color: #0b0000;
+    border: 1;
+    padding: 2%;
+    x-offset: 0;
+    y-offset: 0%;
+    width:      100%;
+    padding:    0%;
+    separator-style: "none";
+}
+
+
+entry normal.normal {
+    background-color: #00000000;
+    color: #00ff36;
+    padding: 0px;
+}
+
+
+prompt normal.normal {
+    background-color: #000000;
+    color: #ff00a9;
+    padding: 0px;
+}
+
+
+listview {
+    // Looks.
+    border-radius: 0px;
+    border: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    background-color: #0b0000;
+    // Enable scrollbar
+    scrollbar: false;
+    scrollbar-width: 15px;
+    fixed-height: true;
+    reverse: false;
+    color: #00ff1e;
+    spacing: 0.3em;
+}
+
 element {
-    padding: 0px 2px;
+    border: 0;
+    padding: 0px;
+    highlight: bold ;
+    /*background-color: ;*/
+    /*text-color: #ff009b;*/
 }
-element selected {
-    background-color: #fac938;
+
+element normal.normal {
+    text-color: #ff009b;
+    background-color: #0b0000;
 }
+
+/*element normal.urgent {
+    text-color: #ff009b;
+    background-color: #0b0000;
+}*/
+
+/*element normal.active {
+    text-color: #ff009b;
+    background-color: #71f28c;
+}*/
+
+element selected.normal {
+    text-color: #ff009b;
+    background-color:#ffdb8e;
+}
+
+/*element selected.urgent {
+    text-color: #deff00;
+    background-color: #deff00;
+}*/
+
+/*element selected.active {
+    text-color: #ff009b;
+    background-color: #0b0000;
+}*/
+
+element alternate.normal {
+    text-color: #ff009b;
+   background-color: #0b0000;
+}
+
+/*element alternate.urgent {
+    text-color: #D75F00FF;
+    background-color: #71f28c;
+}*/
+
+/*element alternate.active {
+    text-color: #005F87FF;
+    background-color: #0b0000;
+}*/
