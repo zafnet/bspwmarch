@@ -1,19 +1,12 @@
-[colors]
+#   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+#   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+#   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+#   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+#   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+#   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
 
-#ESTE ES PARA EL COLOR DE FONDO DEL LADO IZQUIERDO CUANDO ESTAN VACIOS LOS WORKSPACES PERO CUANDO ESTA EL ICONO LO CAMBIO CON EL BACKGROUND DEL ICONO AL FONDO
-
-#background = #cdfbdd
-
-#########################################
-
-#ESTE DE ABAJO ES EL COLOR DE FONDO CUANDO ESTA ENFOCADO EN UNA VENTANA PERO CUANDO ESTA EL ICONO LO CAMBIO CON EL BACKGROUND DEL ICONO AL FONDO
-
-#background-alt = #b789b7 
- 
-###############################################################################
 ################################################################################
 ############                  BARRA PRINCIPAL DE BSPWM             ############
-################################################################################
 ################################################################################
  
 [bar/mainbar-bspwm]
@@ -227,7 +220,7 @@ label-private-foreground =
  
 #format-background = #c5fd27
  
-###############################################################################################
+#---------------------------------------------MODULOS COMUNES---------------------------------#
 
 [module/cpu]
 type = internal/cpu
@@ -351,25 +344,6 @@ format-disconnected-prefix-foreground = #ff0000
 ####################################################################################
 ############                      NO USADOS  POR AHORA          ####################
 ####################################################################################
-
-###FECHA y HORA EN INGLES
-
-#[module/date]
-#type = internal/date
-#interval = 5
-#date = %a %b %d, %Y
-#date = %a %b %d, %Y
-#time = %l:%M%p
-#time-alt = %l:%M%p
-#format-prefix = " " 
-#format-prefix-foreground = #c1ff00
-#format-foreground = #c1ff00
-#format-background = #ef891e
-#label = "%date% %time% 
-
-###############################################################################
-############                       MODULES A-Z                      ############
-################################################################################
 
 [module/backlight-acpi]
 inherit = module/xbacklight
